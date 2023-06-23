@@ -53,8 +53,8 @@ is exact for each $i\in I$. And this is easy to check.
 Note that $A[x] \simeq \oplus_{i=0}^\infty A$ as $A$-modules. Let $0 \to M' \to M \to M'' \to 0$ be any exact sequence of $A$-modules. Then we have
 $$
 \begin{tikzcd}
-0 \arrow{r} & M' \otimes_A A \arrow{r} \isoarrow{d} & M \otimes_A A \arrow{r} \isoarrow{d} & M'' \otimes_A A \arrow{r} \isoarrow{d} & 0 \\ 
- & M' & M & M'' 
+0 \arrow{r} & M' \otimes_A A \arrow{r} \visoarrow{d} & M \otimes_A A \arrow{r} \visoarrow{d} & M'' \otimes_A A \arrow{r} \visoarrow{d} & 0 \\ 
+0 \arrow{r} & M' \arrow{r} & M \arrow{r} & M'' \arrow[r] & 0
 \end{tikzcd}
 $$
 is also exact by (2.14) (iv). So by (2.19), $A$ is a flat $A$-module. Hence, by Exercise 2.4, $ \oplus_{i=0}^\infty A \simeq A[x]$ is a flat $A$-module. And $A[x]$ is clearly an $A$-algebra. So we are done.
@@ -90,7 +90,7 @@ $$
 is still exact. And since $N$ is flat, we have
 $$
 \begin{tikzcd}
-0 \arrow{r} & (P' \otimes_A M) \otimes_A N \arrow{r} \isoarrow{d} &  (P \otimes_A M) \otimes_A N \arrow{r} \isoarrow{d} &  (P'' \otimes_A M) \otimes_A N \arrow{r} \isoarrow{d} & 0 \\ 
+0 \arrow{r} & (P' \otimes_A M) \otimes_A N \arrow{r} \visoarrow{d} &  (P \otimes_A M) \otimes_A N \arrow{r} \visoarrow{d} &  (P'' \otimes_A M) \otimes_A N \arrow{r} \visoarrow{d} & 0 \\ 
 0 \arrow{r} & P' \otimes_A (M \otimes_A N) \arrow{r} & P \otimes_A (M \otimes_A N) \arrow{r} & P'' \otimes_A (M \otimes_A N) \arrow[r] & 0
 \end{tikzcd}
 $$
@@ -103,7 +103,7 @@ $$
 is still exact as $A$-modules. And hence, as $B$-modules by the remark before (2.17). Moreover, since $N$ is flat as a $B$-module, we have
 $$
 \begin{tikzcd}
-0 \arrow{r} & (P' \otimes_A B) \otimes_B N \arrow{r} \isoarrow{d} &  (P \otimes_A B) \otimes_B N \arrow{r} \isoarrow{d} &  (P'' \otimes_A B) \otimes_B N \arrow{r} \isoarrow{d} & 0 \\ 
+0 \arrow{r} & (P' \otimes_A B) \otimes_B N \arrow{r} \visoarrow{d} &  (P \otimes_A B) \otimes_B N \arrow{r} \visoarrow{d} &  (P'' \otimes_A B) \otimes_B N \arrow{r} \visoarrow{d} & 0 \\ 
 0 \arrow{r} & P' \otimes_A N \arrow{r} & P \otimes_A N \arrow{r} & P'' \otimes_A N \arrow[r] & 0
 \end{tikzcd}
 $$
