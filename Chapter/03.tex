@@ -1,0 +1,219 @@
+\documentclass[../A&M.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Rings and Modules of Fractions}
+
+\subsection*{Exercise 3.1}
+
+Write $M = Am_1 + \cdots + Am_n$ for some $m_1,\ldots,m_n \in M$.
+
+$(\Rightarrow)$ Suppose $S^{-1}M = 0$. Then $m_i/1 = 0/1$ for all $i=1,\ldots,n$. So there exists $s_i \in S$ s.t. $s_im_i = 0$. Set $s:=\prod_{i=1}^n s_i \in S$, then $sM=0$.
+
+$(\Leftarrow)$ Suppose there exists $s\in S$ s.t. $sM=0$. Then $sm_i = 0$ for all $i=1,\ldots,n$. Let $m/t \in S^{-1}M$ be given. Write $m = \sum_{i=1}^n a_im_i$ where $a_i\in A$. Note that we have $sm = 0$. So by definition $m/t = 0/1$ and hence $S^{-1}M=0$.
+
+\subsection*{Exercise 3.2}
+
+Let $a/s \in S^{-1}\afk$. Recall from (1.9) that $a/s \in \Jcal(S^{-1}A)$, the Jacobson radical of $S^{-1}A$, $\iff 1-a/s \cdot b/t = (st - ab)/(st) \in S^{-1}A$ is a unit for all $b/t \in S^{-1}A$. Note that since $s,t \in S = 1 + \afk$ and $a\in\afk$, we have $st - ab \equiv 1 \pmod{\afk}$ and so $st - ab \in S$. This implies $1-a/s \cdot b/t$ is a unit in $S^{-1}A$ and hence $a/s \in \Jcal(S^{-1}A)$.
+
+We now give another proof of (2.5). Note that if $M$ is a finitely generated $A$-module, then $S^{-1}M$ is a finitely generated $S^{-1}A$-module. So $\afk M=M$ implies $S^{-1}M = (S^{-1}\afk)(S^{-1}M)$ where $S^{-1}\afk \sbe \Jcal(S^{-1}A)$ by the first part of Exercise 3.2. So by Nakayama's lemma (2.6) we have $S^{-1}M=0$. Then by Exercise 3.1 there exists $x\in S = 1 + \afk$ (so $x \equiv 1 \pmod{\afk}$) s.t. $xM=0$.
+
+\subsection*{Exercise 3.3}
+
+It's clear that $ST$ (resp. $U$) is a multiplicatively closed subset of $A$ (resp. $S^{-1}A$). Consider the natural ring homomorphisms $f:A \to (ST)^{-1}A$, $g:A \to S^{-1}A \to U^{-1}(S^{-1}A)$ and the following diagram:
+$$
+\begin{tikzcd}
+  A \arrow[r, "f"] \arrow[dr, "g"'] & (ST)^{-1}A \arrow[d, dashrightarrow, "h"]   \\
+										& U^{-1}(S^{-1}A)
+\end{tikzcd}
+$$
+We show that $g$ satisfies the three conditions in (3.2). (Then we will obtain the desired isomorphism $h: (ST)^{-1}A \to U^{-1}(S^{-1}A)$.)
+
+For (i), let $st \in ST$. Then $g(st) = (st/1)/(1/1)$ has inverse $(1/s)/(t/1) \in U^{-1}(S^{-1}A)$. (Note that $1/s \in S^{-1}A$ and $t/1 \in U$.)
+
+For (ii), suppose $a\in A$ s.t. $g(a)=(a/1)/(1/1) = (0/1)/(1/1) \in U^{-1}(S^{-1}A)$. Then there exists $t/1 \in U$ s.t. $(a/1) \cdot (t/1) = at/1 = 0/1 \in S^{-1}A$. So there exists $s\in S$ s.t. $(at)s = a(st) = 0 \in A$. Hence we have $a(st)=0$ for some $st \in ST$.
+
+For (iii), given any $(a/s)/(t/1) \in U^{-1}(S^{-1}A)$. Then $g(a)g(st)^{-1} = (a/1)/(1/1) \cdot (1/s)/(t/1) = (a/s)/(t/1)$.
+
+\subsection*{Exercise 3.4}
+
+We will use $\cdot$ to specify any module structures appear in this exercise. (Essentially they are all induced from the $A$-module structure on $B$.) Consider the map $\phi: S^{-1}B \to T^{-1}B$ defined by $\phi(b/s) := b/f(s)$.
+
+If $b_1/s_1 = b_2/s_2 \in S^{-1}B$, then there exists $s' \in S$ s.t.
+$$
+s' \cdot (s_2\cdot b_1 - s_1 \cdot b_2)
+= f(s')(f(s_2)b_1-f(s_1)b_2)
+= 0 
+$$
+where $f(s')\in T$. So $b_1/f(s_1) = b_2/f(s_2)$ and hence $\phi$ is well-defined.
+
+Let $b_1/s_1, b_2/s_2 \in S^{-1}B$ and $a/s' \in S^{-1}A$. We see that
+\begin{align*}
+\phi \left( \frac{b_1}{s_1} + \frac{b_2}{s_2} \right)
+&= \phi \left( \frac{s_2 \cdot b_1 + s_1 \cdot b_2}{s_1s_2} \right)
+= \frac{s_2 \cdot b_1 + s_1 \cdot b_2}{f(s_1s_2)}
+= \frac{f(s_2)b_1 + f(s_1)b_2}{f(s_1)f(s_2)}     \\
+&= \frac{b_1}{f(s_1)} + \frac{b_2}{f(s_2)}
+= \phi \left( \frac{b_1}{s_1} \right) + \phi \left( \frac{b_2}{s_2} \right)
+\end{align*}
+and
+$$
+\phi \left( \frac{a}{s'} \cdot \frac{b}{s} \right)
+= \phi \left( \frac{a \cdot b}{s's} \right)
+= \phi \left( \frac{f(a)b}{s's} \right)
+= \frac{f(a)b}{f(s's)}
+= \frac{f(a)b}{f(s')f(s)}
+= \frac{a}{s'} \cdot \frac{b}{f(s)}
+= \frac{a}{s'} \cdot \phi \left( \frac{b}{s} \right)
+$$
+So $\phi$ is an $S^{-1}A$-module homomorphism.
+
+The surjectivity is clear. On the other hand, suppose $b/s \in S^{-1}B$ s.t. $\phi(b/s) = b/f(s) = 0/1 \in T^{-1}B$. Then there exists $t = f(s') \in T$ where $s'\in S$ s.t. $tb = f(s') b = s' \cdot b = 0 \in B$. So we have $b/s = 0/1 \in S^{-1}B$ and hence $\phi$ is injective.
+
+\subsection*{Exercise 3.5}
+
+Suppose $A_\pfk$ has no nilpotent element $\neq0$ for all prime ideal $\pfk$. By definition and (3.12) this means $\Ncal(A_\pfk) = \Ncal(A)_\pfk = 0$ for all $\pfk$. (Here we view $\Ncal(A)$ as an $A$-module.) So by (3.8) we have $\Ncal(A)=0$, i.e., $A$ has no nilpotent element $\neq0$.
+
+If $A_\pfk$ is an integral domain for all prime $\pfk$, then $A$ is not necessarily an integral domain. Consider $A=\ZZ/6\ZZ$. Then the prime ideals of $A$ are $\pfk = \{0,3\}$ and $\{0,2,4\}$. (We skip the detail calculations.)
+
+\subsection*{Exercise 3.6}
+
+Note that $\Sigma$ is non-empty because $\{1\} \in \Sigma$. Moreover, if $(S_i)_{i\in I}$ is a chain in $\Sigma$, then it's easy to see that $\bigcup_{i\in I} S_i \in \Sigma$ which is an upper bound of $(S_i)_{i\in I}$. So by Zorn's lemma, $\Sigma$ has a maximal element.
+
+Given $S\in \Sigma$. Suppose $S$ is maximal. Let $\pfk \sbe A \setminus S$ be a prime ideal, then $A \setminus \pfk \in \Sigma$ and $A \setminus \pfk \spe S$. By the maximality of $S$ we have $A \setminus \pfk = S$ and so $\pfk = A \setminus S$. Conversely, suppose $A\setminus S$ is a minimal prime ideal. Let $T \in \Sigma$ with $T\spe S$, then $A \setminus T$ is a prime ideal and $A \setminus T \sbe A \setminus S$. So by the minimality of $A \setminus S$ we have $A \setminus T = A \setminus S$ and so $T=S$.
+
+\subsection*{Exercise 3.7}
+
+\subsection*{Exercise 3.8}
+
+\subsection*{Exercise 3.9}
+
+\subsection*{Exercise 3.10}
+
+\subsection*{Exercise 3.11}
+
+\subsection*{Exercise 3.12}
+
+Given $m_1,m_2\in T(M)$ and $a \in A$. Assume $a_1m_1=a_2m_2=0$ for some non-zero $a_1,a_2\in A$. Then $(a_1a_2)(m_1+m_2)=0$ and $a_1(am_1) = 0$. Note that $a_1a_2\neq 0$ as $A$ is an integral domain. So we have $m_1+m_2,am_1 \in T(M)$ and hence $T(M)$ is a submodule of $M$.
+
+(i) Given any torsion element $\ovl{m} \in M/T(M)$. Then there exists $0\neq a\in A$ s.t. $am \in T(M)$. So there exists $0\neq b\in A$ s.t. $b(am) = (ab)m = 0$. This implies $m \in T(M)$, or equivalently, $\ovl{m} = \ovl{0}$ in $M/T(M)$. Hence $M/T(M)$ is torsion free.
+
+(ii) Given $m\in T(M)$, there exists $0\neq a\in A$ s.t. $am=0$. Then $0=f(am)=af(m)$ and so $f(m) \in T(N)$. Hence $f(T(M)) \sbe T(N)$.
+
+(iii) By (ii), the exact sequence $0 \to M' \overset{f}{\to} M \overset{g}{\to} M''$ induces a well-defined sequence
+$$
+0 \lra T(M') \overset{f'}{\lra} T(M) \overset{g'}{\lra} T(M'')
+$$
+where $f',g'$ are the restriction maps. We check that this is also exact. Since $f$ is injective and $g\circ f = 0$. So naturally $f'$ is also injective and $g' \circ f' = 0$ (i.e., $\im f' \sbe \ker g'$). It remains to show that $\im f' \spe \ker g'$.
+
+Let $y\in \ker g'$. Then $y\in T(M)$ and $g'(y)=g(y)=0$. Take $0\neq a \in A$ s.t. $ay = 0$. Since $y \in \ker g = \im f$, $y = f(x)$ for some $x\in M'$. Note that $f(ax) = af(x) = ay = 0$. And since $f$ is injective we have $ax=0$, i.e., $x\in T(M')$. Hence $y = f(x) \in f(T(M')) = \im f'$.
+
+(iv) (We will ignore the unnecessary hint and use a much more simpler approach.) Let $\phi: M \to K \otimes_A M$ where $\phi(x) = 1 \otimes x$. Set $S := A \setminus \{0\}$ and note that $K = S^{-1}A$. Then $K \otimes_A M = S^{-1}A \otimes_A M \simeq S^{-1}M$ by (3.5). So $\phi$ induces $\phi' : M \to K \otimes_A M \isoto S^{-1}M$ where $\phi'(x) = x/1$. Hence,
+\begin{align*}
+\ker \phi
+= \ker \phi' 
+&= \{ x \in M \mid x/1 = 0/1 \in S^{-1}M \}   \\
+&= \{ x \in M \mid \exists a\in S = A \setminus \{0\} \text{ s.t. } ax = 0 \}   \\
+&= T(M)
+\end{align*}
+
+\subsection*{Exercise 3.13}
+
+Let $m/s \in T(S^{-1}M)$. Then there exists $a/t \neq 0/1 \in S^{-1}A$ (so $ba\neq 0$ for all $b\in A$) s.t. $a/t \cdot m/s = (am)/(ts) = 0/1 \in S^{-1}M$. So there exists $b \in S$ s.t. $b(am) = 0$. Since $ba \neq 0$ we have $m \in T(M)$. So $m/s \in S^{-1}T(M)$.
+
+Conversely, let $m/s \in S^{-1}T(M)$. Then there exists $0 \neq a \in A$ s.t. $am=0$. Note that $a/1 \neq 0/1$ as $A$ is an integral domain, and we have $a/1 \cdot m/s = 0/s = 0/1 \in S^{-1}M$. So $m/s \in T(S^{-1}M)$.
+
+(i) $\Rightarrow$ (ii) $T(M)=0 \implies T(M_\pfk) = T(M)_\pfk = 0$.
+
+(ii) $\Rightarrow$ (iii) Clear.
+
+(iii) $\Rightarrow$ (i) Suppose $0 = T(M_\mfk) = T(M)_\mfk$ for all maximal ideal $\mfk$, then by (3.8) $T(M)=0$.
+
+\subsection*{Exercise 3.14}
+
+Viewing $M/\afk M$ as an $A$-module, by (3.8) and (3.4) it's enough to check that $(M/\afk M)_\mfk = M_\mfk/(\afk M)_\mfk = 0$ for all maximal ideals $\mfk$. When $\mfk \spe \afk$, we immediately have $M_\mfk/(\afk M)_\mfk = 0$ by the assumption. And when $\mfk \nspe \afk$, we take $a\in\afk$ but $a \notin \mfk$. Then $a/a = 1/1 \in \afk_\mfk \implies \afk_\mfk = A_\mfk \implies (\afk M)_\mfk = \afk_\mfk M_\mfk = A_\mfk M_\mfk = M_\mfk \implies M_\mfk/(\afk M)_\mfk = 0$. This completes the proof.
+
+(From another point of view, we may regard $M/\afk M$ as an $A/\afk$-module and note that by the correspondence theorem (1.1), the maximal ideals of $A/\afk$ correspond to the maximal ideals of $A$ containing $\afk$.)
+
+\subsection*{Exercise 3.15}
+
+Let $\{x_1,\ldots,x_n\}$ be a set of generators and $\{e_1,\ldots,e_n\}$ be the canonical basis of $F$. Define $\phi: F\to F$ by $\phi(e_i) = x_i$ and extend it $A$-linearly. Then $\phi$ is a surjective $A$-module homomorphism. We claim that it is injective. (So $\phi$ will be an isomorphism and hence $\{x_1,\ldots,x_n\}$ will be a basis of $F$.)
+
+By (3.9) it's enough to show that $\phi_\pfk: F_\pfk \to F_\pfk$ is injective for each prime ideal $\pfk$. We note that $F_\pfk$ is a free $A_\pfk$-module of rank $n$ (see \nameref{Bonus 3.1}), so WLOG we may assume $A$ is a local ring with residue field $k:=A/\mfk$.
+
+Let $N:=\ker \phi$. Since $F=A^n$ is a flat $A$-module, so the exact sequence
+$$
+0 \lra N \lra F \overset{\phi}{\lra} F \lra 0
+$$
+induces the exact sequence (see \nameref{Bonus 3.2})
+$$
+\begin{tikzcd}
+0 \arrow{r} & k \otimes_A N \arrow{r} \visoarrow{d} & k \otimes_A F \arrow[r, "1 \otimes \phi"] \visoarrow{d} & k \otimes_A F \arrow{r} \visoarrow{d} & 0 \\ 
+0 \arrow{r} & N/\mfk N \arrow{r} & k^n \arrow{r} & k^n \arrow[r] & 0
+\end{tikzcd}
+$$
+where the isomorphism $k \otimes_A N \simeq N/\mfk N$ is due to Exercise 2.2. Now, as $1 \otimes \phi$ is a surjective map between vector spaces, it must be an isomorphism. So we have $N/\mfk N = 0$, or equivalently, $\mfk N=N$.
+
+Note that by Exercise 2.12, $N$ is finitely generated. So by Nakayama's lemma (2.6), $N=0$. This shows that $\phi$ is injective.
+
+Suppose now there is a generating set $\{y_1,\ldots,y_m\}$ of $F$ but $m<n$. Then we may add any distinct elements $y_{m+1},\ldots,y_n \in F$ to it so that $\{y_1,\ldots,y_m,y_{m+1},\ldots,y_n\}$ becomes a set of $n$ generators of $F$. By the previous proof we know they form a basis of $F$. But this is a contradiction because $y_{m+1},\ldots,y_n$ can be generated by $\{y_1,\ldots,y_m\}$.
+
+\subsection*{Exercise 3.16}
+
+\subsection*{Exercise 3.17}
+
+\subsection*{Exercise 3.18}
+
+\subsection*{Exercise 3.19}
+
+\subsection*{Exercise 3.20}
+
+\subsection*{Exercise 3.21}
+
+\subsection*{Exercise 3.22}
+
+\subsection*{Exercise 3.23}
+
+\subsection*{Exercise 3.24}
+
+\subsection*{Exercise 3.25}
+
+\subsection*{Exercise 3.26}
+
+\subsection*{Exercise 3.27}
+
+\subsection*{Exercise 3.28}
+
+\subsection*{Exercise 3.29}
+
+\subsection*{Exercise 3.30}
+
+\subsection*{Bonus 3.1} \label{Bonus 3.1}
+
+We show the following: Let $f: A\to B$ be a ring homomorphism and $F$ be a free $A$-module with basis $\{e_i\}_{i\in I}$. Then $B \otimes_A F$ is a free $B$-module with basis $\{1 \otimes e_i\}_{i\in I}$. (In view of Exercise 3.15, we take $f: A \to A_\pfk$ and $F=A^n$. Then by (3.5) $A_\pfk \otimes_A F \simeq F_\pfk$ is a free $A_\pfk$-module with rank $n$.)
+
+By definition $F \simeq \oplus_{i\in I} F_i$ where each $F_i \simeq A$ as an $A$-module. So we have
+$$
+B \otimes_A F \simeq B \otimes_A (\oplus_{i\in I} F_i) \simeq \oplus_{i\in I} (B \otimes_A A) \simeq \oplus_{i\in I} B
+$$
+where each $1 \otimes e_{i_0}$ corresponds to $(e'_i) \in \oplus_{i\in I} B$, $e'_i = 1$ if $i=i_0$ and $0$ otherwise. Since $\oplus_{i\in I} B$ is a free $B$-module with basis $\{e'_i\}_{i\in I}$, we have $B \otimes_A F$ is also a free $B$-module with basis $\{1 \otimes e_i\}_{i\in I}$.
+
+\subsection*{Bonus 3.2} \label{Bonus 3.2}
+
+We show the following\footnote{Qing Liu, Algebraic Geometry and
+Arithmetic Curves (2002), p. 9}: Let $0 \to M' \to M \to M'' \to 0$ be an
+exact sequence of $A$-modules. Suppose $M''$ is flat, then the induced sequence $0 \to M' \otimes_A N \to M \otimes_A N \to M'' \otimes_A N \to 0$ is also exact for any $A$-module $N$.
+
+By (2.18) we know the tensor product is right exact, so it's sufficient to show that $M' \otimes_A N \to M \otimes_A N$ is injective. We write $N=L/K$ where $L$ is a free $A$-module with a submodule $K$. (For example, consider the surjective $A$-homomorphism $L := \oplus_{n\in N} A \twoheadrightarrow N$ with kernel $K$.) Then we have the following commutative diagram of exact sequences (Note that the free module $L$ preserves the exactness as free modules are necessarily flat.):
+$$
+\begin{tikzcd}
+	& M' \otimes_A K \arrow[r, "\alpha"] \arrow[d, "a"] & M \otimes_A K \arrow[r, "\beta"] \arrow[d, "b"] & M'' \otimes_A K \arrow{r} \arrow[d, "c"] & 0 \\ 
+0 \arrow{r} & M' \otimes_A L \arrow[r, "\gamma"] \arrow[d, "d"] & M \otimes_A L \arrow[r, "\delta"] \arrow[d, "e"] & M'' \otimes_A L \arrow[r] & 0 \\
+	& M' \otimes_A N \arrow[r, "\epsilon"] & M \otimes_A N & &
+\end{tikzcd}
+$$
+Note that $c$ is injective by (2.19) (as $M''$ is flat).
+
+Let $x \in \ker \epsilon$. As $d$ is surjective, take $y \in M' \otimes_A L$ s.t. $d(y)=x$. Then $e(\gamma(y)) = \epsilon(d(y)) = \epsilon(x) = 0$. So $\gamma(y) \in \ker e = \im b$. Take $z \in M \otimes_A K$ s.t. $b(z)=\gamma(y)$. Then $c(\beta(z)) = \delta(b(z)) = \delta(\gamma(y)) = 0$. As $c$ is injective, $\beta(z)=0$. So $z\in \ker \beta = \im \alpha$. Take $w\in M' \otimes_A K$ s.t. $\alpha(w) = z$. Then $\gamma(y) = b(z) = b(\alpha(w)) = \gamma(a(w))$. As $\gamma$ is injective, $y=a(w)$. So $x = d(y) = d(a(w)) = 0$. This shows that $\epsilon$ is injective, as desired.
+
+\end{document}
