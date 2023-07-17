@@ -145,9 +145,9 @@ Since we already have $r(\afk)\spe\afk$, so $r(\afk)=\afk$.
 
 (i) $\Rightarrow$ (ii) and (i) $\Rightarrow$ (iii) If $A$ has exactly one prime ideal $\pfk$, then $A$ is a local ring with the unique maximal ideal $\pfk$, and its nilradical $\Ncal(A)=\pfk$. These two imply that $A$ is a disjoint union of units and nilpotent elements, and $A/\Ncal(A)$ is a field.
 
-(ii) $\Rightarrow$ (iii) If every element in $A$ is either a unit or a nilpotent element, then every non-zero element in $A/\Ncal(A)$ is represented by a unit in $A$, which is clearly a unit in $A/\Ncal(A)$.
+(ii) $\Rightarrow$ (iii) If every element in $A$ is either a unit or nilpotent, then every non-zero element in $A/\Ncal(A)$ is represented by a unit in $A$, which is clearly a unit in $A/\Ncal(A)$.
 
-(iii) $\Rightarrow$ (i) Suppose $A/\Ncal(A)$ is a field, then $\Ncal(A)$ is itself a prime ideal. Let $\pfk$ be any prime ideal in $A$. We claim that $\pfk=\Ncal(A)$. Clearly $\Ncal(A) \sbe \pfk$. If there exists $x\in\pfk$ but $x\notin\Ncal(A)$, then for some $y\in A$ we have $1-xy\in\Ncal(A) \sbe \Jcal(A)$, the Jacobson radical of $A$. By (1.9), $1-(1-xy) = xy$ is a unit. Hence so is $x$. But this is a contradiction as $x\in\pfk$. So we have $\pfk=\Ncal(A)$.
+(iii) $\Rightarrow$ (i) Suppose $A/\Ncal(A)$ is a field, then $\Ncal(A)$ is a maximal ideal (and hence, a prime ideal). Let $\pfk$ be any prime ideal in $A$. We claim that $\pfk=\Ncal(A)$. Clearly $\Ncal(A) \sbe \pfk$. If there exists $x\in\pfk$ but $x\notin\Ncal(A)$, then $\ovl{x} \neq \ovl{0}$ in $A/\Ncal(A)$. So for some $y\in A$ we have $1-xy\in\Ncal(A) \sbe \Jcal(A)$, the Jacobson radical of $A$. By (1.9), $1-(1-xy) = xy$ is a unit in $A$. Hence so is $x$. But this is a contradiction as $x\in\pfk$. So we have $\pfk=\Ncal(A)$.
 
 \subsection*{Exercise 1.11}
 
@@ -159,11 +159,11 @@ Since we already have $r(\afk)\spe\afk$, so $r(\afk)=\afk$.
 
 \subsection*{Exercise 1.12}
 
-Let $A$ be a local ring and $x\in A$ be an idempotent. Then $x$ is either a nilpotent or a unit. (See Exercise 1.10 if necessary.)
+Let $A$ be a local ring and $x\in A$ be an idempotent, i.e., $x^2=x$.
 
-Case 1: $x$ is nilpotent, say $x^n=0$. Then $x=x^2=\cdots=x^n=0$.
+Case 1: $x \in \mfk = \Jcal(A)$, the Jacobson radical of $A$. Then $1-x$ is a unit by (1.9). Take $y\in A$ s.t. $(1-x)y = 1$. And as $(1-x)x=0$, we have $0 = (1-x)xy = x$.
 
-Case 2: $x$ is a unit. Take $y\in A$ s.t. $1=xyx$. Then $x=x^2y=xy=1$.
+Case 2: $x$ is a unit. Take $y\in A$ s.t. $1=xy$. Then $x=x^2y=xy=1$.
 
 \subsection*{Exercise 1.13}
 
