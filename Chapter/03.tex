@@ -27,7 +27,7 @@ $$
 										& U^{-1}(S^{-1}A)
 \end{tikzcd}
 $$
-We show that $g$ satisfies the three conditions in (3.2). (Then we will obtain the desired isomorphism $h: (ST)^{-1}A \to U^{-1}(S^{-1}A)$.)
+We show that $g$ satisfies the three conditions in (3.2). (Then we will obtain the desired isomorphism $h: (ST)^{-1}A \isoto U^{-1}(S^{-1}A)$.)
 
 For (i), let $st \in ST$. Then $g(st) = (st/1)/(1/1)$ has inverse $(1/s)/(t/1) \in U^{-1}(S^{-1}A)$. (Note that $1/s \in S^{-1}A$ and $t/1 \in U$.)
 
@@ -204,7 +204,7 @@ We show the following\footnote{Qing Liu, Algebraic Geometry and
 Arithmetic Curves (2002), p. 9}: Let $0 \to M' \to M \to M'' \to 0$ be an
 exact sequence of $A$-modules. Suppose $M''$ is flat, then the induced sequence $0 \to M' \otimes_A N \to M \otimes_A N \to M'' \otimes_A N \to 0$ is also exact for any $A$-module $N$.
 
-By (2.18) we know the tensor product is right exact, so it's sufficient to show that $M' \otimes_A N \to M \otimes_A N$ is injective. We write $N=L/K$ where $L$ is a free $A$-module with a submodule $K$. (For example, consider the surjective $A$-homomorphism $L := \oplus_{n\in N} A \twoheadrightarrow N$ with kernel $K$.) Then we have the following commutative diagram of exact sequences (Note that the free module $L$ preserves the exactness as free modules are necessarily flat.):
+By (2.18) we know the tensor product is right exact, so it's sufficient to show that $M' \otimes_A N \to M \otimes_A N$ is injective. We write $N=L/K$ where $L$ is a free $A$-module with a submodule $K$. (For example, consider the surjective $A$-homomorphism $L := \oplus_{n\in N} A \sur N$ with kernel $K$.) Then we have the following commutative diagram of exact sequences (Note that the free module $L$ preserves the exactness as free modules are necessarily flat.):
 $$
 \begin{tikzcd}
 	& M' \otimes_A K \arrow[r, "\alpha"] \arrow[d, "a"] & M \otimes_A K \arrow[r, "\beta"] \arrow[d, "b"] & M'' \otimes_A K \arrow{r} \arrow[d, "c"] & 0 \\ 

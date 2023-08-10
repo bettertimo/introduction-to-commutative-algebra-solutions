@@ -87,7 +87,7 @@ $(\Leftarrow)$ Given $g=\sum b_mx^m \in A[[x]]$, then by the assumption $1-a_0b_
 
 (iv) Consider the natural surjective ring homomorphisms
 $$
-\phi: A[[x]] \twoheadrightarrow A[[x]]/(x) \simeq A \twoheadrightarrow A/\mfk^c
+\phi: A[[x]] \sur A[[x]]/(x) \simeq A \sur A/\mfk^c
 $$
 We check that $\ker\phi = \mfk^{ce} + xA[[x]]$. Given $f=\sum a_nx^n \in ker\phi$. This means $a_0 \in \mfk^c \sbe \mfk^{ce}$ and so $f = a_0 + \sum_{n\geq1} a_nx^n \in \mfk^{ce} + xA[[x]]$. Conversely, given $\sum m_if_i + xg \in \mfk^{ce} + xA[[x]]$ where $m_i\in\mfk^c$ and $f_i,g \in A[[x]]$. Then clearly the constant term is in $\mfk^c$ and so its image under $\phi$ is zero.
 
@@ -105,7 +105,7 @@ Since the $\lhs$ is a field by the assumption, hence so is the $\rhs$. This comp
 
 (v) Let $\pfk\sbe A$ be a prime ideal. Similar to (iv) (changing the role of $\mfk^c$ to $\pfk$), we consider the natural surjective ring homomorphisms
 $$
-A[[x]] \twoheadrightarrow A[[x]]/(x) \simeq A \twoheadrightarrow A/\pfk
+A[[x]] \sur A[[x]]/(x) \simeq A \sur A/\pfk
 $$
 with kernel $\pfk^e  + xA[[x]]$. So we have the ring isomorphism
 $$
@@ -214,7 +214,7 @@ $$
 V(f) = V((f)) = V(r((f))) = V(r((g))) = V((g)) = V(g)
 $$
 
-(v) Suppose $X$ is covered by basis elements $\{X_{f_i}\}_{i\in I} \sbe \Bcal$. Let $\afk:=\langle f_i \mid i\in I \rangle$, then
+(v) Suppose $X$ is covered by basic open sets $\{X_{f_i}\}_{i\in I} \sbe \Bcal$. Let $\afk:=\langle f_i \mid i\in I \rangle$, then
 $$
 X = \bigcup_{i\in I} X_{f_i} = \bigcup_{i\in I} (X\setminus V(f_i)) = X\setminus  \bigcap_{i\in I} V(f_i) = X \setminus V\left( \bigcup_{i\in I} \{f_i\} \right) = X\setminus V(\afk)
 $$
@@ -250,11 +250,68 @@ where $\afk$ runs through all ideals in $A$ with the indicated conditions. (We'v
 
 \subsection*{Exercise 1.19}
 
-$(\Rightarrow)$ Given $f,g\notin\Ncal(A)$. So they are not nilpotent. By Exercise 1.17 (ii), both $X_f$ and $X_g$ are non-empty. And since $\Spec(A)$ is irreducible, so $X_f \cap X_g \neq \emptyset$, say $x\in X_f \cap X_g$. This means both $f,g\notin\pfk_x$ and so $fg\notin\pfk_x$. Since $\Ncal(A)\sbe \pfk_x$, so $fg\notin\Ncal(A)$.
+$(\Rightarrow)$ Given $f,g\notin\Ncal(A)$. So they are not nilpotent. By Exercise 1.17 (ii), both $X_f$ and $X_g$ are non-empty. And since $\Spec(A)$ is irreducible, so $X_f \cap X_g \neq \emptyset$, say $x\in X_f \cap X_g$. This means both $f,g\notin\pfk_x$ and so $fg\notin\pfk_x$. Since $\Ncal(A)\sbe \pfk_x$, we have $fg\notin\Ncal(A)$.
 
-$(\Leftarrow)$ It's enough to check that any two non-empty basis elements $X_f,X_g$ intersect. By Exercise 1.17 (ii), we know $f,g$ are not nilpotent, so $f,g\notin\Ncal(A)$. Since $\Ncal(A)$ is a prime ideal, so $fg\notin\Ncal(A)$. Hence $X_f \cap X_g = X_{fg}\neq\emptyset$. (We've used Exercise 1.17 (i).)
+$(\Leftarrow)$ It's enough to check that any two non-empty basis elements $X_f,X_g$ intersect. By Exercise 1.17 (ii), we know $f,g$ are not nilpotent, so $f,g\notin\Ncal(A)$. Since $\Ncal(A)$ is a prime ideal, $fg\notin\Ncal(A)$. Hence by Exercise 1.17 (i), $X_f \cap X_g = X_{fg}\neq\emptyset$.
 
 \subsection*{Exercise 1.20}
+
+(i) Let $U,V \sbe \ovl{Y}$ be two non-empty open sets. Then $U = U' \cap \ovl{Y}$ and $V = V' \cap \ovl{Y}$ for some open sets $U',V'$ in $X$. Note that
+$$
+U \cap V = (U' \cap \ovl{Y}) \cap (V' \cap \ovl{Y}) \spe (U' \cap Y) \cap (V' \cap Y)
+$$
+where $U' \cap Y, V' \cap Y$ are non-empty open sets in $Y$. (If $U' \cap Y = \emptyset$, then $Y \sbe X \setminus U'$ where $X \setminus U'$ is closed in $X$. So $\ovl{Y} \sbe X \setminus U' \implies U' \cap \ovl{Y} = U = \emptyset$, which is absurd. $V' \cap Y$ is similar.) And since $Y$ is irreducible, they must intersect. Hence, $U \cap V \neq \emptyset$.
+
+(ii) Let $Y \sbe X$ be irreducible. Set $\Sigma:=\{ Z \mid Z \spe Y \text{ is irreducible}\}$, which is non-empty as $Y\in\Sigma$. Let $S:=(Z_i)_{i\in I}$ be a chain in $\Sigma$. We claim that $Z := \bigcup_{i\in I} Z_i$ is irreducible. (Then $Z\in\Sigma$ is an upper bound of $S$. So by Zorn's lemma, $\Sigma$ has a maximal element.)
+
+Let $U,V \sbe Z$ be two non-empty open sets. Then $U = U' \cap Z = \bigcup_{i\in I} (U' \cap Z_i)$ and $V = V' \cap Z = \bigcup_{i\in I} (V' \cap Z_i)$ for some open sets $U',V'$ in $X$. Note that
+$$
+U \cap V
+= \left( \bigcup_{i\in I} (U' \cap Z_i) \right) \cap \left( \bigcup_{i\in I} (V' \cap Z_i) \right)
+= \bigcup_{\substack{ i\in I \\ j\in I }} \left( (U' \cap Z_i) \cap (V' \cap Z_j) \right)
+$$
+Since $U = \bigcup_{i\in I} (U' \cap Z_i)$ and $V = \bigcup_{i\in I} (V' \cap Z_i)$ are non-empty, we have $U' \cap Z_{i'}$ and $V' \cap Z_{j'}$ are non-empty for some $i',j' \in I$. WLOG, assume $Z_{i'} \sbe Z_{j'}$, then $\emptyset \neq U' \cap Z_{i'} \sbe U' \cap Z_{j'}$. And since $Z_{j'}$ is irreducible, $(U' \cap Z_{j'}) \cap (V' \cap Z_{j'}) \neq \emptyset$. Hence,
+$$
+U \cap V
+= \bigcup_{\substack{ i\in I \\ j\in I }} \left( (U' \cap Z_i) \cap (V' \cap Z_j) \right)
+\spe (U' \cap Z_{j'}) \cap (V' \cap Z_{j'})
+\neq \emptyset
+$$
+
+(iii) Suppose $Y$ is irreducible in a Hausdorff space $X$. If $\#(Y) \geq 2$, say $x,y\in Y$ with $x\neq y$, then there exist open neighborhoods $U,V$ of $x,y$, respectively, s.t. $U \cap V = \emptyset$. Note that $U \cap Y$ and $V \cap Y$ are non-empty open sets in $Y$, so $(U \cap Y) \cap (V \cap Y) \neq \emptyset$ as $Y$ is irreducible, which is absurd. This shows that every irreducible subspace of a Hausdorff space must be singleton. (And the converse is clearly true.) Hence it must be maximal.
+
+(iv) We first show the following: Let $\afk$ be any ideal in $A$, then $V(\afk)$ is irreducible if and only if $r(\afk)$ is a prime ideal $(*)$.
+
+Observe that for any ideal $\afk$ in $A$ and $f\in A$, we have
+$$
+f \notin r(\afk) \overset{(1.14)}{=} \bigcap_{\pfk \in V(\afk)} \pfk
+\iff \exists \pfk \in V(\afk) \text{ s.t. } f \notin \pfk
+\iff X_f \cap V(\afk) \neq \emptyset
+$$
+
+$(\Rightarrow)$ Suppose $V(\afk)$ is irreducible. Let $f,g \in A$ with $f,g \notin r(\afk)$. Then both $X_f \cap V(\afk)$ and $X_g \cap V(\afk)$ are non-empty. And since $V(\afk)$ is irreducible, we have
+$$
+(X_f \cap V(\afk)) \cap (X_g \cap V(\afk))
+= X_{fg} \cap V(\afk)
+\neq \emptyset
+$$
+by Exercise 1.17 (i). So $fg \notin r(\afk)$.
+
+$(\Leftarrow)$ Suppose $r(\afk)$ is a prime ideal. Let $U = X_f \cap V(\afk), V = X_g \cap V(\afk)$ be non-empty basic open sets in $V(\afk)$. Then both $f,g \notin r(\afk)$. And since $r(\afk)$ is a prime ideal, we have $fg \notin r(\afk)$ and so
+$$
+\emptyset \neq X_{fg} \cap V(\afk)
+= (X_f \cap V(\afk)) \cap (X_g \cap V(\afk))
+= U \cap V
+$$
+by Exercise 1.17 (i) again.
+
+Now, we show that
+$$
+\{\text{irreducible components of } X \} = \{ V(\pfk) \mid \pfk \text{ is a minimal prime ideal}\}
+$$
+Let $V(\afk)$ be an irreducible component of $X$. Then by $(*)$ we know $r(\afk)$ is a prime ideal and by Exercise 1.15 (i) we know $V(\afk) = V(r(\afk))$. So it's remaining to show that $r(\afk)$ is a minimal prime ideal. Suppose $\pfk \sbe r(\afk)$ is prime, then $V(r(\afk)) \sbe V(\pfk)$. Since $V(\pfk)$ is irreducible by $(*)$, so by the maximality of $V(r(\afk))$ we have $V(r(\afk)) = V(\pfk)$. Hence $\pfk \in V(\pfk) = V(r(\afk)) \implies \pfk \spe r(\afk) \implies \pfk = r(\afk)$.
+
+Conversely, let $\pfk$ be a minimal prime ideal. Then by $(*)$ we know $V(\pfk)$ is irreducible. So it's remaining to show that $V(\pfk)$ is maximal irreducible. Suppose $V(\afk) \spe V(\pfk)$ is irreducible. Then by $(*)$ we know $r(\afk)$ is a prime. Note that by Exercise 1.15 (i), $\pfk \in V(\pfk) \sbe V(\afk) = V(r(\afk)) \implies \pfk \spe r(\afk)$. So by the minimality of $\pfk$ we have $\pfk = r(\afk)$. Hence $V(\afk) = V(r(\afk)) = V(\pfk)$.
 
 \subsection*{Exercise 1.21}
 

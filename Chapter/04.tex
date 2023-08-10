@@ -1,0 +1,123 @@
+\documentclass[../A&R.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Primary Decomposition}
+
+\subsection*{Exercise 4.1}
+
+By Exercise 1.20 (iv), the irreducible components of $\Spec(A/\afk)$ are the closed sets $V(\pfk)$ where $\pfk$ is a minimal prime ideal of $A/\afk$. By (4.6), the set of all minimal prime ideals in $A/\afk$ are precisely the set of minimal prime ideals belonging to $\ovl{0} \in A/\afk$, which is therefore a finite set. So there are finitely many irreducible components of $\Spec(A/\afk)$. (Note that $\ovl{0}$ in $A/\afk$ is decomposable as $\afk \sbe A$ is. See the proof of (4.7) if necessary.)
+
+\subsection*{Exercise 4.2}
+
+Suppose $\afk = r(\afk)$. Let $\afk = \bigcap_{i=1}^n \qfk_i$ be a minimal primary decomposition of $\afk$ with $r(\qfk_i)=\pfk_i$ (so there're $n$ prime ideals belonging to $\afk$). Then $\afk = r(\afk) = \bigcap_{i=1}^n \pfk_i$ is also a primary decomposition of $\afk$. If there're some embedded prime ideals, then by eliminating the unnecessary terms, we obtain a minimal primary decomposition $\bigcap_{j=1}^m \pfk_{i_j}$. So now there're $m$ prime ideals belonging to $\afk$ with $m<n$. But this contradicts to the 1st uniqueness theorem (4.5).
+
+\subsection*{Exercise 4.3}
+
+\subsection*{Exercise 4.4}
+
+Let $A:=\ZZ[t]$. Since $A/\mfk \simeq \ZZ/2\ZZ$ is a field, $\mfk \sbe A$ is a maximal ideal.
+
+Since $A/\qfk \simeq \ZZ/4\ZZ$, whose zero-divisors are nilpotent, so $\qfk$ is a primary ideal. And by (1.13), we have $r(\qfk) = r((4)+(t)) = r( r((4)) + r((t)) ) = r( r((2)^2) + r((t)) ) = r( (2) + (t) ) = r(\mfk) = \mfk$ as $(2)$ and $(t)$ are prime ideals in $A$. (Note that $A/(2) \simeq (\ZZ/2\ZZ)[t]$ and $A/(t) \simeq \ZZ$ are integral domains.) So $\qfk$ is $\mfk$-primary.
+
+It's easy to check that $\mfk^2 \subset \qfk \subset \mfk$ with strict inclusions. So $\qfk$ is not a power of $\mfk$.
+
+\subsection*{Exercise 4.5}
+
+$\mfk^2$ is primary by (4.2). We check that $\afk := \pfk_1\pfk_2 = \pfk_1 \cap \pfk_2 \cap \mfk^2$, i.e.,
+$$
+(x^2,xy,yz,xz) = (x,y) \cap (x,z) \cap (x^2,y^2,z^2,xy,yz,xz)
+$$
+Clearly, we have $\pfk_1\pfk_2 \sbe \pfk_1 \cap \pfk_2$ and $\pfk_1\pfk_2 \sbe \mfk^2$. So $(\sbe)$ is done. Conversely, suppose $a=f_1x^2+f_2y^2+f_3z^2+f_4xy+f_5yz+f_6xz \in \rhs$. Then
+\begin{align*}
+a &= x \cdot \jk + y \cdot \jk + f_3z^2 \in (x,y) \implies f_3z^2 \in (x,y) \implies f_3 \in (x,y) \implies f_3z^2 \in \lhs \\
+a &= x \cdot \jk + z \cdot \jk + f_2y^2 \in (x,z) \implies f_2y^2 \in (x,z) \implies f_2 \in (x,z) \implies f_2y^2 \in \lhs
+\end{align*}
+This implies $a\in\lhs$. So $(\spe)$ is also done.
+
+Note that $\pfk_1$ is $\pfk_1$-primary, $\pfk_2$ is $\pfk_2$-primary, and $\mfk^2$ is $\mfk$-primary. Clearly $\pfk_1,\pfk_2,\mfk$ are distinct. Moreover, we have $\pfk_1 \nspe \pfk_2 \cap \mfk^2$ (try $z^2$), $\pfk_2 \nspe \pfk_1 \cap \mfk^2$ (try $y^2$), and $\mfk^2 \nspe \pfk_1 \cap \pfk_2$ (try $x$). So $\afk = \pfk_1 \cap \pfk_2 \cap \mfk^2$ is a reduced primary decomposition.
+
+It's easy to see that $\pfk_1,\pfk_2$ are isolated, and $\mfk$ is embedded.
+
+\subsection*{Exercise 4.6}
+
+\subsection*{Exercise 4.7}
+
+(i) Clearly, $\afk \cdot A[x] = \afk[x]$.
+
+(ii) There's an isomorphism $A[x]/\pfk[x] \simeq (A/\pfk)[x]$. (Consider the natural reduction map $A[x] \sur (A/\pfk)[x]$ with kernel $\pfk[x]$.) And since $A/\pfk$ is an integral domain, so is $ (A/\pfk)[x]$. (Otherwise, if there exist non-zero zero-divisors $f,g \in (A/\pfk)[x]$, then by considering their coefficients of the lowest degree terms, we obtain non-zero zero-divisors of $A/\pfk$.) Hence, $\pfk[x]$ is a prime ideal. 
+
+(iii) Let $\ovl{f}=\sum \ovl{a_i}x^i \in (A/\qfk)[x] \simeq A[x]/\qfk[x]$ be a zero-divisor. Then by Exercise 1.2 (iii), there exists $\ovl{0} \neq \ovl{a} \in A/\qfk$ s.t. $\ovl{a}\cdot\ovl{f} = \ovl{0} \in (A/\qfk)[x]$. Or equivalently, there exists $a \notin \qfk$ s.t. $aa_i \in \qfk$ for all $i$. As $\qfk$ is a primary ideal, we have $a_i \in r(\qfk)$. This means $\ovl{a_i}$ is nilpotent in $A/\qfk$ for all $i$. And by Exercise 1.2 (ii), $\ovl{f}$ is nilpotent. Hence, $\qfk[x]$ is a primary ideal.
+
+From (i) and (1.18) we know $r(\qfk[x]) = r(\qfk^e) \spe r(\qfk)^e = \pfk^e = \pfk[x]$. Conversely, suppose $f(x) = \sum a_ix^i \in r(\qfk[x]) \implies \ovl{f(x)}$ is nilpotent in $A[x]/\qfk[x] \implies \ovl{f}(x)$ is nilpotent in $(A/\qfk)[x]$. By Exercise 1.2 (ii), $\ovl{a_i}$ is nilpotent in $A/\qfk$ for all $i$. So $a_i \in r(\qfk) = \pfk$ for all $i$. Hence, $f(x) \in \pfk[x]$. This shows that $\qfk[x]$ is $\pfk[x]$-primary.
+
+(iv) Assume $r(\qfk_i) = \pfk_i$. Note that $\afk[x] = (\bigcap_{i=1}^n \qfk_i)[x] = \bigcap_{i=1}^n \qfk_i[x]$. And by (iii) we know each $\qfk_i[x]$ is $\pfk_i[x]$-primary. So this is a primary decomposition of $\afk[x]$. And since all $\pfk_i$ are distinct, so are all $\pfk_i[x]$. Now, if $\qfk_i[x] \spe \bigcap_{j\neq i} \qfk_j[x] = (\bigcap_{j\neq i} \qfk_j) [x]$ for some $i$. Then by taking contractions, we have $\qfk_i \spe \bigcap_{j\neq i} \qfk_j$, a contradiction. Hence $\afk[x] = \bigcap_{i=1}^n \qfk_i[x]$ is minimal.
+
+(v) Suppose $\afk = \bigcap_{i=1}^n \qfk_i$ is minimal with $r(\qfk_i) = \pfk_i$. By (iv) we know $\afk[x] = \bigcap_{i=1}^n \qfk_i[x]$ is also minimal. If there exists $\pfk_i[x] \sbe \pfk[x]$, then by taking contraction we have $\pfk_i \sbe \pfk$. Since $\pfk_i$ is a prime ideal belonging to $\afk$, so by the minimality of $\pfk$, we have $\pfk_i = \pfk$. Hence, $\pfk_i[x] = \pfk[x]$.
+
+\subsection*{Exercise 4.8}
+
+Let $n$ and $i<n$ be fixed. We will use the notation $\pfk(j)$ to denote the ideal generated by $x_1,\ldots,x_i$ in $k[x_1,\ldots,x_j]$ for $i \leq j \leq n$, i.e., $\pfk(j) := (x_1,\ldots,x_i)$ in $k[x_1,\ldots,x_i,\ldots,x_j]$.
+
+We first show that $\pfk(j)$ is a prime ideal in $k[x_1,\ldots,x_j]$ for all $j=i,\ldots,n$. (In particular, the case $j=n$ is what we want.) Note that $\pfk(i)$ is a prime ideal in $k[x_1,\ldots,x_i]$ as their quotient is the field $k$ (so in fact, $\pfk(i)$ is a maximal ideal). By Exercise 4.7 (ii), we have $\pfk(i) [x_{i+1}]$ is a prime ideal in $k[x_1,\ldots,x_i][x_{i+1}] = k[x_1,\ldots,x_i,x_{i+1}]$.
+
+We check that $\pfk(i) [x_{i+1}] = \pfk(i+1)$. Since every monomial in the left is clearly in the right, so $\pfk(i) [x_{i+1}] \sbe \pfk(i+1)$. Conversely, since every generator of the right is in the left as a coefficient, so $\pfk(i) [x_{i+1}] \spe \pfk(i+1)$. This shows that $\pfk(i+1) = \pfk(i) [x_{i+1}]$ is a prime ideal in $k[x_1,\ldots,x_{i+1}]$. And inductively, one has that $\pfk(j)$ is a prime ideal in $k[x_1,\ldots,x_j]$ for all $j=i,\ldots,n$.
+
+Next, let $m\in\NN$. We show that $\pfk(j)^m$ is a primary ideal in $k[x_1,\ldots,x_j]$ for all $j=i,\ldots,n$. (Again in particular, the case $j=n$ is what we want.) Since $\pfk(i)$ is a maximal ideal in $k[x_1,\ldots,x_i]$, so by (4.2) we know $\pfk(i)^m$ is primary. Then by Exercise 4.7 (iii), $\pfk(i)^m [x_{i+1}]$ is primary in $k[x_1,\ldots,x_i][x_{i+1}] = k[x_1,\ldots,x_i,x_{i+1}]$.
+
+Now, one sees similarly that $\pfk(i+1)^m = \pfk(i)^m [x_{i+1}]$, so it is primary in $k[x_1,\ldots,x_{i+1}]$. And again inductively, one has that $\pfk(j)^m$ is primary in $k[x_1,\ldots,x_j]$ for all $j=i,\ldots,n$.
+
+\subsection*{Exercise 4.9}
+
+\subsection*{Exercise 4.10}
+
+\subsection*{Exercise 4.11}
+
+\subsection*{Exercise 4.12}
+
+\subsection*{Exercise 4.13}
+
+\subsection*{Exercise 4.14}
+
+Suppose $\pfk = (\afk:x)$ is a maximal element of the set $\{ (\afk:x) \mid x \notin \afk \}$. We claim that $\pfk$ is a prime ideal. (Then by the 1st uniqueness theorem (4.5), $\pfk = r(\pfk) = r(\afk:x)$ is a prime ideal belonging to $\afk$.)
+
+Let $a,b \in A$ with $ab \in (\afk:x)$ and $a \notin (\afk:x)$. Then $abx \in \afk$ and $ax \notin \afk$. These two imply that $(\afk:x) \subset (\afk:bx)$. And since $(\afk:x)$ is maximal, we have $bx \in \afk$, i.e., $b \in (\afk:x)$. This shows that $(\afk:x)$ is a prime ideal.
+
+\subsection*{Exercise 4.15}
+
+Let $\afk = \bigcap_{i=1}^m \qfk_i$ be a minimal primary decomposition of $\afk$ with $r(\qfk_i)=\pfk_i$. Note that $\pfk \notin \Sigma \iff f \in \pfk \iff S_f \cap \pfk \neq \emptyset$. So by (4.9),
+$$
+S_f(\afk)
+= \bigcap_{S_f \cap \pfk_i = \emptyset} \qfk_i
+= \bigcap_{\pfk_i \in \Sigma} \qfk_i
+\overset{\df}{=} \qfk_\Sigma
+$$
+
+For each $n$, $a \in (\afk:f^n) \implies af^n = \alpha \in \afk \implies a/1 = \alpha/f^n \in S_f^{-1}\afk \implies a \in S_f(\afk)$. So $(\afk:f^n) \sbe S_f(\afk) = \qfk_\Sigma$ for any $n$. Conversely, let $\qfk_i$ be fixed:
+
+Case 1: If $S_f \cap \pfk_i \neq \emptyset \implies f \in \pfk_i = r(\qfk_i) \implies f^{n_i} \in \qfk_i$ for some $n_i \implies (\qfk_i:f^{n_i}) = A \implies \qfk_\Sigma \sbe (\qfk_i : f^{n_i})$.
+
+Case 2: If $S_f \cap \pfk_i = \emptyset$. Then for any $x \in \qfk_\Sigma \implies x \in \qfk_i \implies x \in (\qfk_i:1) \implies \qfk_\Sigma \sbe (\qfk_i:1) \sbe (\qfk_i:f^n)$ for all $n$.
+
+So if we let $n:=\max \{n_i\}$, then $\qfk_\Sigma \sbe \bigcap_{i=1}^m (\qfk_i:f^n) = (\bigcap_{i=1}^m \qfk_i : f^n) = (\afk:f^n)$ by (1.12) (iv). And hence $\qfk_\Sigma = (\afk:f^n)$.
+
+\subsection*{Exercise 4.16}
+
+By (3.11) (i), every ideal in $S^{-1}A$ has the form $S^{-1}\afk$ for some ideal $\afk$ in $A$. Since $\afk$ is decomposable, by (4.9) we have $S^{-1}\afk$ is also decomposable.
+
+\subsection*{Exercise 4.17}
+
+\subsection*{Exercise 4.18}
+
+\subsection*{Exercise 4.19}
+
+\subsection*{Exercise 4.20}
+
+\subsection*{Exercise 4.21}
+
+\subsection*{Exercise 4.22}
+
+\subsection*{Exercise 4.23}
+\phantom{}
+
+\end{document}

@@ -1,0 +1,273 @@
+\documentclass[../A&M.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Integral Dependence and Valuations}
+
+\subsection*{Exercise 5.1}
+
+Let $V(\bfk)$ be a closed set in $\Spec(B)$ where $\bfk$ is an ideal in $B$. We will show that $f^*(V(\bfk)) = V(f^{-1}(\bfk))$. (So $f^*$ is a closed map.)
+
+Given $f^*(\qfk) = f^{-1}(\qfk) \in f^*(V(\bfk))$ where $\qfk \spe \bfk$ is a prime. Then clearly $f^{-1}(\qfk)$ is a prime in $A$ and $f^{-1}(\qfk) \spe f^{-1}(\bfk)$. So $f^{-1}(\qfk) \in V(f^{-1}(\bfk))$.
+
+Conversely, let $\pfk \in V(f^{-1}(\bfk))$ be a prime in $A$ with $\pfk \spe f^{-1}(\bfk)$ . We first claim that $f(\pfk)$ is a prime in $f(A)$. Given $f(a_1),f(a_2) \in f(A)$ with $f(a_1)\cdot f(a_2) = f(a_1a_2) \in f(\pfk)$. Choose $c \in \pfk$ s.t. $f(a_1a_2) = f(c) \implies a_1a_2-c \in \ker f \sbe f^{-1}(\bfk) \sbe \pfk \implies a_1a_2 \in \pfk \implies a_1 \in \pfk$ or $a_2 \in \pfk \implies f(a_1) \in f(\pfk)$ or $f(a_2) \in f(\pfk)$. This completes the claim.
+
+Since $f(\pfk)$ is a prime in $f(A)$ and $B$ is integral over $f(A)$, so by (5.10) there exists a prime $\qfk \sbe B$ s.t. $\qfk \cap f(A) = f(\pfk)$. We claim that $\pfk = f^{-1}(\qfk)$. Let $a\in\pfk \implies f(a) \in f(\pfk) = \qfk \cap f(A) \implies a \in f^{-1}(\qfk)$. Conversely, let $a\in f^{-1}(\qfk) \implies f(a) \in \qfk \cap f(A) = f(\pfk)$. Choose $c\in\pfk$ s.t. $f(a)=f(c) \implies a-c \in \ker f \sbe f^{-1}(\bfk) \sbe \pfk \implies a \in \pfk$. This completes the claim.
+
+In order to obtain $\pfk = f^{-1}(\qfk) = f^*(\qfk) \in f^*(V(\bfk))$, it remains to check that $\qfk \spe \bfk$. But this is easy because $\qfk = f(f^{-1}(\qfk)) = f(\pfk) \spe f(f^{-1}(\bfk)) = \bfk$.
+
+\subsection*{Exercise 5.2}
+
+$f:A \to \Omega$ induces an embedding $\ovl{f}: A/\ker f \inj \Omega$. Since $A/\ker f$ is isomorphic to the subring $f(A)$ of the field $\Omega$, we know $A/\ker f$ is an integral domain and so $\ker f$ is a prime in $A$. By (5.10) there exists a prime $\qfk$ of $B$ s.t. $\qfk \cap A = \ker f$.
+
+Let $\ovl{A}:=A/\ker f$ and $\ovl{B}:=B/\qfk$. Note that the embedding $\ovl{f}: \ovl{A} \inj \Omega$ can be extended to $\ovl{f}: \Frac(\ovl{A}) \inj \Omega$ (still denoted as $\ovl{f}$). Moreover, since $\ovl{B}$ is integral over $\ovl{A}$ by (5.6), this implies $\Frac(\ovl{B})$ is algebraic over $\Frac(\ovl{A})$. (Given $a/b \in \Frac(\ovl{B})$. As $a,b\in\ovl{B}$ are integral over $\ovl{A}$, $a/1,1/b$ are algebraic over $\Frac(\ovl{A})$. Hence so is their product $a/b$.) And as $\Omega$ is an algebraically closed field, so the embedding $\ovl{f}: \Frac(\ovl{A}) \inj \Omega$ can be further extended to $\tilde{\ovl{f}}: \Frac(\ovl{B}) \inj \Omega$ (see \nameref{Bonus 5.1} if necessary).
+
+Now, define
+$$
+g: B \sur \ovl{B} \inj \Frac(\ovl{B}) \overset{\tilde{\ovl{f}}}{\inj} \Omega
+$$
+Then for any $a\in A$, $g(a) = \tilde{\ovl{f}}(\ovl{a}) = \ovl{f}(\ovl{a}) = f(a)$. So $g$ is an extension of $f$.
+
+\subsection*{Exercise 5.3}
+
+By (5.3) it's enough to check any pure tensor $x \otimes y \in B' \otimes_A C$ is integral over $(f \otimes 1)(B \otimes_A C)$. Since $x \in B'$ is integral over $f(B)$, write $x^n + f(b_1)x^{n-1} + \cdots + f(b_n) = 0$ for some $b_i \in B$. Then
+\begin{align*}
+&(x \otimes y)^n + (f(b_1) \otimes y)(x \otimes y)^{n-1} + \cdots + (f(b_n) \otimes y^n)    \\
+={} &(x^n \otimes y^n) + (f(b_1)x^{n-1} \otimes y^n) + \cdots + (f(b_n) \otimes y^n)  \\
+={} &(x^n + f(b_1)x^{n-1} + \cdots + f(b_n)) \otimes y^n   \\
+={} &0 \otimes y^n = 0
+\end{align*}
+So $x \otimes y$ is integral over $(f \otimes 1)(B \otimes_A C)$.
+
+(To obtain (5.6) (ii), take $B=A, B'=B, C=S^{-1}A, f=\id_A$. Then by (3.5) we have $S^{-1}B$ is integral over $S^{-1}A$.)
+
+\subsection*{Exercise 5.4}
+
+If $1/(x+1) \in B_\nfk$ is integral over $A_\mfk$, then write
+$$
+\left( \frac{1}{x+1} \right)^n + \frac{f_1(x^2-1)}{g_1(x^2-1)} \left( \frac{1}{x+1} \right)^{n-1} + \cdots + \frac{f_n(x^2-1)}{g_n(x^2-1)} = 0
+$$
+for some $f_i(x),g_i(x) \in k[x]$ with $g_i(x^2-1) \notin \nfk$ (i.e., $g_i(1^2-1) = g_i(0) \neq 0$). So
+$$
+1 + \frac{f_1(x^2-1)}{g_1(x^2-1)} (x+1) + \cdots + \frac{f_n(x^2-1)}{g_n(x^2-1)} (x+1)^n = 0
+$$
+Plug in $x=-1$ gives us $1=0$, which is absurd. Hence $B_\nfk$ is not integral over $A_\mfk$.
+
+\subsection*{Exercise 5.5}
+
+(i) Let $x\in A$ be a unit in $B$. So $x^{-1} \in B$. As $B$ is integral over $A$, we have $x^{-n}+a_1x^{-(n-1)}+\cdots+a_n=0$ for some $a_i\in A$. Multiply this equation by $x^{n-1}$ we have $x^{-1} = -(a_1+a_2x+\cdots+a_nx^{n-1}) \in A$. So $x$ is a unit in $A$.
+
+(ii) Since the Jacobson radical $\Jcal(A)$ (resp. $\Jcal(B)$) is the intersection of all maximal ideals in $A$ (resp. $B$), and by (5.8) we know the contractions of maximal ideals of $B$ is maximal in $A$, so we immediately have $\Jcal(B) \cap A \spe \Jcal(A)$. Conversely, let $x \in \Jcal(B) \cap A$. For any $y \in A \sbe B$, we have $1-xy \in A$ is a unit in $B$ by (1.9). So by (i) $1-xy$ is a unit in $A$ and hence $x \in \Jcal(A)$.
+
+\subsection*{Exercise 5.6}
+
+\subsection*{Exercise 5.7}
+
+Let $x\in B$ be integral over $A$ and suppose $x\notin A$. Write $x^n+a_1x^{n-1}+\cdots+a_n=0$ for some $a_i\in A$. Note that $x(x^{n-1}+a_1x^{n-2}+\cdots+a_{n-1}) = -a_n \in A$. As $B \setminus A$ is closed under multiplication and $x\notin A$, we have $x^{n-1}+a_1x^{n-2}+\cdots+a_{n-1} \in A$. And this implies $x^{n-1}+a_1x^{n-2}+\cdots+a_{n-2}x = x(x^{n-2}+a_1x^{n-3}+\cdots+a_{n-2}) \in A$.
+
+Again, using the same reason, we see that $x^{n-2}+a_1x^{n-3}+\cdots+a_{n-2} \in A$. So inductively, we obtain $x+a_1 \in A$ and so $x \in A$, which is absurd.
+
+\subsection*{Exercise 5.8}
+
+\subsection*{Exercise 5.9}
+
+\subsection*{Exercise 5.10}
+
+\subsection*{Exercise 5.11}
+
+\subsection*{Exercise 5.12}
+
+Let $x\in A$. Consider the monic polynomial $f(t):= \prod_{\sigma \in G} (t - \sigma(x)) \in A[t]$. Since $\id_A \in G$, we know $f(x)=0$. Moreover, for any $\tau\in G$, $\tau(f) = \prod_{\sigma \in G} (t - \tau\sigma(x)) = \prod_{\sigma' \in G} (t - \sigma'(x)) = f$. So $f\in A^G[t]$. Hence $x$ is integral over $A^G$.
+
+Define the action of $G$ on $S^{-1}A$ by $\sigma(a/s) := \sigma(a)/\sigma(s)$, which is well-defined as $\sigma(s) \in S$. This extends the action of $G$ on $A$.
+
+We next show that $(S^G)^{-1}A^G \simeq (S^{-1}A)^G$. Consider the natural ring homomorphisms $f:A^G \to (S^G)^{-1}A^G$, $g:A^G \to (S^{-1}A)^G$ and the following diagram:
+$$
+\begin{tikzcd}
+  A^G \arrow[r, "f"] \arrow[dr, "g"'] & (S^G)^{-1}A^G \arrow[d, dashrightarrow, "h"]   \\
+										& (S^{-1}A)^G
+\end{tikzcd}
+$$
+We show that $g$ satisfies the three conditions in (3.2). (Then we will obtain the desired isomorphism $h: (S^G)^{-1}A^G  \isoto (S^{-1}A)^G$.)
+
+For (i), let $s \in S^G$. Note that $\sigma(1/s) = 1/\sigma(s) = 1/s$ for all $\sigma\in G$. So $1/s \in (S^{-1}A)^G$ is the inverse of $g(s) = s/1$.
+
+For (ii), suppose $a\in A^G$ s.t. $g(a) = a/1 = 0/1 \in (S^{-1}A)^G$. Note that $g(a) = f(a) = a/1 = 0/1 \in (S^G)^{-1}A^G$. So there exists $s \in S^G$ s.t. $as = 0$.
+
+For (iii), given any $a/s \in (S^{-1}A)^G$. As $\prod_{\sigma \neq \id_A} \sigma(s) \in S$, we have
+$$
+\frac{a}{s}
+= \frac{a \prod_{\sigma \neq \id_A} \sigma(s)}{\prod_{\sigma \in G} \sigma(s)}
+=: \frac{a'}{s'} \in (S^{-1}A)^G
+$$
+Note that $s' \in S \cap A^G = S^G$.
+
+Since for any $\sigma\in G$, we have $a'/s' = \sigma(a'/s') = \sigma(a')/\sigma(s') = \sigma(a')/s'$. So there exists $t_\sigma \in S$ s.t. $0 = t_\sigma(s'\sigma(a') - s'a') =t_\sigma s' (\sigma(a')-a')$. Let $t:=\prod_{\sigma \in G} \prod_{\tau \in G} \tau(t_\sigma s')$. Then $t \in S^G$ because $\prod_{\tau \in G} \tau(t_\sigma s') \in S^G$ for each $\sigma \in G$. And we have
+$$
+0 = t(\sigma(a')-a') = \sigma(a't) - a't
+$$
+by considering $\tau=\id_A$. Note that $a'/s' = (a't)/(s't)$, where now $\sigma(a't) = a't$ for each $\sigma \in G$ (so $a't \in A^G$). Hence we have $a/s = a'/s' = (a't)/(s't) = g(a't)g(s't)^{-1}$.
+
+\subsection*{Exercise 5.13}
+
+Let $\pfk_1,\pfk_2 \in P$. Let $x\in \pfk_1$. Note that $\prod_{\sigma \in G} \sigma(x) \in \pfk_1$ by considering $\sigma = \id_A$. So $\prod_{\sigma \in G} \sigma(x) \in \pfk_1 \cap A^G = \pfk = \pfk_2 \cap A^G \sbe \pfk_2 \implies \sigma(x) \in \pfk_2$ for some $\sigma \in G \implies x \in \sigma^{-1}(\pfk_2)$. This shows that $\pfk_1 \sbe \bigcup_{\sigma \in G} \sigma(\pfk_2)$.
+
+It's not hard to check that each $\sigma(\pfk_2) \in P$, i.e., $\sigma(\pfk_2)$ is a prime in $A$ and $\sigma(\pfk_2) \cap A^G = \pfk$. So by (1.11), $\pfk_1 \sbe \sigma(\pfk_2)$ for some $\sigma \in G$. And as $A$ is integral over $A^G$ by Exercise 5.12, so by (5.9), $\pfk_1 = \sigma(\pfk_2)$. Hence, $G$ acts on $P$ transitively. (In particular, $P$ is finite as $G$ is finite.)
+
+\subsection*{Exercise 5.14}
+
+It's enough to show that $\sigma(B) \sbe B$ for any $\sigma \in G$. (Then $\sigma^{-1}(B) \sbe B$ and so $B \sbe \sigma(B)$.) Fix $\sigma\in G$ and $b\in B$. Since $b$ is integral over $A$, write $b^n + a_1b^{n-1} + \cdots + a_n = 0$ for some $a_i\in A$. By applying $\sigma$ we have $\sigma(b)^n + a_1\sigma(b)^{n-1} + \cdots + a_n = 0$. So $\sigma(b) \in L$ is also integral over $A$. As $B$ is the integral closure of $A$ in $L$, we have $\sigma(b) \in B$.
+
+Note that $B^G = B \cap L^G = B \cap K = A$. (The second equality is because $L/K$ is Galois. And the third equality is because $A$ is integrally closed in its field of fractions $K$.)
+
+\subsection*{Exercise 5.15}
+
+\subsection*{Exercise 5.16}
+
+\begin{comment}
+Let $x_1,\ldots,x_n$ generate $A$ as a $k$-algebra. WLOG, assume $x_1,\ldots,x_r$ are algebraically independent over $k$ and each of $x_{r+1},\ldots,x_n$ is algebraic over $k[x_1,\ldots,x_r]$. Induction on $n$. When $n=r$ then there's nothing to prove. So suppose $n>r$ and the result holds for $n-1$ generators.
+
+Note $x_n$ is algebraic over $k[x_1,\ldots,x_r] \implies$ over $k[x_1,\ldots,x_{n-1}]$. Take a polynomial $f\neq0$ in $n$ variables s.t. $f(x_1,\ldots,x_n)=0$. Let $\deg f$ be the total degree of $f$ and $F$ be the homogeneous part of $f$ with degree equals to $\deg f$. So $f = F+g$ where the total degree of $g$ is less than $\deg f$. As $k$ is infinite, take $\lambda_1,\ldots,\lambda_{n-1} \in k$ s.t. $F(\lambda_1,\ldots,\lambda_{n-1},1) \neq 0$. For $i=1,\ldots,n-1$, set $x_i':=x_i-\lambda_ix_n$. Then we have
+\begin{align*}
+0 &= f(x_1,\ldots,x_n)    \\
+&= F(x_1'+\lambda_1x_n,\ldots,x_{n-1}'+\lambda_{n-1}x_n,x_n) + g(x_1'+\lambda_1x_n,\ldots,x_{n-1}'+\lambda_{n-1}x_n,x_n)    \\
+&= \left( F(\lambda_1,\ldots,\lambda_{n-1},1) x_n^{\deg f} + \jk \right) + g(x_1'+\lambda_1x_n,\ldots,x_{n-1}'+\lambda_{n-1}x_n,x_n)
+\end{align*}
+where each term in $\jk$ has $x_n$-degree less than $\deg f$ and coefficients in $k[x_1',\ldots,x_{n-1}']$. (For more details in the last equality, suppose for simplicity $F=t_1^{i_1} \cdots t_n^{i_n}$ is just a monomial where $i_1+\cdots+i_n=\deg f$. Then
+\begin{align*}
+F(x_1'+\lambda_1x_n,\ldots,x_{n-1}'+\lambda_{n-1}x_n,x_n)
+&= (x_1'+\lambda_1x_n)^{i_1} \cdots (x_{n-1}'+\lambda_{n-1}x_n)^{i_{n-1}} \cdot x_n^{i_n}    \\
+&= (\lambda_1 x_n)^{i_1} \cdots (\lambda_{n-1} x_n)^{i_{n-1}} \cdot x_n^{i_n} + \jk  \\
+&= F(\lambda_1,\ldots,\lambda_{n-1},1) x_n^{\deg f} + \jk
+\end{align*}
+where $\jk$ is easily seen to possess the properties described above. Since $F$ is homogeneous of degree $=\deg f$, this works for several terms.) Moreover, since the total degree of $g$ is less than $\deg f$, so in particular its $x_n$-degree less than $\deg f$. Lastly, since $F(\lambda_1,\ldots,\lambda_{n-1},1) \neq 0$, so by dividing this constant we have that $x_n$ is integral over $k[x_1',\ldots,x_{n-1}']$. This shows that $A$ is integral over $A' := k[x_1',\ldots,x_{n-1}']$.
+
+Since $A'$ has $n-1$ generators, so by the induction hypothesis there exist $y_1,\ldots,y_r \in A'$ which are algebraically independent over $k$ s.t. $A'$ is integral over $k[y_1,\ldots,y_r]$. Hence by (5.4), $A$ is integral over $k[y_1,\ldots,y_r]$.
+\end{comment}
+
+\subsection*{Exercise 5.17}
+
+\subsection*{Exercise 5.18}
+
+\subsection*{Exercise 5.19}
+
+\subsection*{Exercise 5.20}
+
+\subsection*{Exercise 5.21}
+
+\subsection*{Exercise 5.22}
+
+\subsection*{Exercise 5.23}
+
+\subsection*{Exercise 5.24}
+
+\subsection*{Exercise 5.25}
+
+\subsection*{Exercise 5.26}
+
+\subsection*{Exercise 5.27}
+
+$\Sigma$ is clearly non-empty because $K \in \Sigma$. Let $S:=(A_i)_{i\in I}$ be a chain in $\Sigma$ where each $A_i$ has the maximal ideal $\mfk_i$. We claim that $A := \bigcup_{i\in I} A_i$ is a local subring of $K$ with the maximal ideal $\mfk := \bigcup_{i\in I} \mfk_i$ and $A$ dominates each $A_i$. (Then $A\in\Sigma$ is an upper bound of $S$. So by Zorn's lemma, $\Sigma$ has a maximal element.)
+
+Clearly $A$ is a subring of $K$ and $\mfk$ is a proper ideal in $A$. Let $x\in A\setminus \mfk$. Then $x\in A_i \setminus \mfk_i$ for some $i$. As $A_i$ is a local ring with the maximal ideal $\mfk_i$, we have $x$ is a unit in $A_i$ (so in $A$). Hence by (1.6), $A$ is a local ring with the maximal ideal $\mfk$. Moreover, for each $j \in I$, we see that $\mfk \cap A_j = (\bigcup_{i\in I} \mfk_i) \cap A_j = \bigcup_{i\in I} (\mfk_i \cap A_j) = \mfk_j$. So $A$ dominates $A_i$.
+
+($\Rightarrow$) Suppose $A \in \Sigma$ is maximal with the maximal ideal $\mfk$. Let $\Sigma'$ be the set of all pairs $(A,f)$ in page 65 with $\Omega$ a fixed algebraic closure of $A/\mfk$ and $f:A \to A/\mfk \inj \Omega$ be the natural map. We claim that $(A,f) \in \Sigma'$ is maximal. (So by (5.21), $A$ is a valuation ring of $K$.) Suppose not, then there exists a maximal element $(B,g) \in \Sigma'$ with $(A,f) \lneq (B,g)$. By (5.19) $B$ is a local ring with the maximal ideal $\nfk=\ker g$. Note that $\nfk \cap A = \ker g \cap A = \ker f = \mfk$. So $B \in \Sigma$ dominates $A$. But this contradicts to the maximality of $A \in \Sigma$. Hence $(A,f) \in \Sigma'$ is maximal.
+
+($\Leftarrow$) Suppose $A$ is a valuation ring of $K$. Then by (5.18), $A$ is a local ring (with the maximal ideal $\mfk$) and so $A\in\Sigma$. Let $B\in\Sigma$ (with the maximal ideal $\nfk$) which dominates $A$. We claim that in fact $B=A$. Suppose not, then there exists $0\neq x \in B \sbe K$ but $x\notin A$. Since $A$ is a valuation ring, this implies $x^{-1}\in A \sbe B \implies x^{-1}$ is a unit in $B \implies x^{-1} \notin \nfk \implies x^{-1} \notin \mfk$ (as $\mfk \sbe \nfk$) $\implies x^{-1}$ is a unit in $A \implies (x^{-1})^{-1} = x \in A$, a contradiction. Hence $B=A$.
+
+\subsection*{Exercise 5.28}
+
+(1) $\Rightarrow$ (2) Suppose there exist ideals $\afk,\bfk \sbe A$ but $\afk \nsbe \bfk$ and $\bfk \nsbe \afk$. Then we may take $0 \neq a \in \afk$ but $a \notin \bfk$, and $0 \neq b \in \bfk$ but $b \notin \afk$. Consider $0 \neq a/b \in K$. Since $A$ is a valuation ring, we have $a/b \in A$ or $b/a \in A$. But this implies $(a/b) \cdot b = a \in \bfk$ or $(b/a) \cdot a = b \in \afk$, which is absurd.
+
+(2) $\Rightarrow$ (1) Let $0 \neq a/b \in K$ where $a,b\in A$. Consider two ideals $(a),(b) \sbe A$. By assumption we have $(a) \sbe (b)$ or $(b) \sbe (a)$. And this implies $a/b \in A$ or $b/a \in A$. So $A$ is a valuation ring of $K$. 
+
+Now, suppose $A$ is a valuation ring and $\pfk$ is a prime ideal of $A$. Then by (3.11) (i) and (1.1) we see that $A_\pfk$ and $A/\pfk$ are valuation rings of their fields of fractions.
+
+\subsection*{Exercise 5.29}
+
+Let $B \spe A$ be a subring of $K$. Since $A$ is a valuation ring of $K$, by (5.18) we know $B$ is also a valuation ring of $K$ and hence a local ring. Let $\nfk$ be its maximal ideal. Set $\pfk := \nfk \cap A$, which is clearly a prime ideal of $A$. We claim that $B = A_\pfk$.
+
+First, given $a/b \in A_\pfk$. Note that $b \in A \setminus \pfk \implies b \notin \nfk \implies b$ is a unit in $B \implies 1/b \in B \implies a/b \in B$. This shows that $A_\pfk \sbe B$. Moreover, since $A_\pfk \sbe B \sbe K = \Frac(A)$ are valuation rings of $K$ by (5.18), so they are both maximal in $\Sigma$ (using the notation in Exercise 5.27). And since the maximal ideal $\pfk A_\pfk$ of $A_\pfk$ is contained in the maximal ideal $\nfk$ of $B$ (i.e., $B$ dominates $A_\pfk$), so in fact $B = A_\pfk$.
+
+\subsection*{Exercise 5.30}
+
+We first check that $(\Gamma,\geq)$ is well-defined. Suppose $\xi \in \Gamma$ (resp. $\eta \in \Gamma$) is represented by $x_1,x_2 \in K^\times$ (resp. $y_1,y_2 \in K^\times$). Write $x_1=ux_2$ and $y_1=vy_2$ where $u,v \in U$. Then $x_1y_1^{-1} \in A \iff (ux_2)(vy_2)^{-1} = x_2y_2^{-1} uv \in A \iff x_2y_2^{-1} \in A$. So $\geq$ is independent of the choice of representatives.
+
+Next, we check that $(\Gamma,\geq)$ is a total order which is compatible with the group structure of $\Gamma$. Let $\xi,\eta,\omega \in \Gamma$ be represented by $x,y,z \in K^\times$, respectively.
+
+Reflexivity: $x \cdot x^{-1} = 1 \in A \implies \xi \geq \xi$. 
+
+Antisymmetry: Suppose $\xi \geq \eta$ and $\eta \geq \xi \implies xy^{-1}, yx^{-1} \in A \implies xy^{-1}$ is a unit in $A \implies \xi = \eta$.
+
+Transitivity: Suppose $\xi \geq \eta$ and $\eta \geq \omega \implies xy^{-1} , yz^{-1} \in A \implies xz^{-1} = (xy^{-1})(yz^{-1}) \in A \implies \xi \geq \omega$.
+
+Total ordering: Consider $0 \neq xy^{-1} \in K$. Since $A$ is a valuation ring of $K$, we have either $xy^{-1} \in A$ or $yx^{-1} \in A$. This means $\xi \geq \eta$ or $\eta \geq \xi$.
+
+Compatibility: Suppose $\xi \geq \eta \implies xy^{-1} \in A \implies xy^{-1} = (xz)(yz)^{-1} \in A \implies \xi\omega \geq \eta\omega$.
+
+\textcolor{red}{(Before we proceed, let us make an important remark: The homomorphism $v$ is defined only on $K^\times = K \setminus \{0\}$. By convention, one extends the domain of $v$ to $K$ by setting $v(0):=\infty$. The group law and the ordering are extended to the set $\Gamma \cup \{\infty\}$ in the obvious way.)}\footnote{Jacobson, Nathan. \textit{Basic Algebra II}. Freeman and Company, 2nd ed. (1989), p. 575.}
+
+With the above remark, we show that $v(x+y) \geq \min \{v(x),v(y)\}$ for all $x,y\in K$. From the definition, it's clear when $x,y$ or $x+y=0$. So we may assume none of them is $0$. Since $(\Gamma,\geq)$ is a total order, so WLOG, we may assume $v(x) \geq v(y) \implies xy^{-1} \in A \implies (x+y)y^{-1} = xy^{-1} + 1 \in A \implies v(x+y) \geq v(y) = \min \{v(x),v(y)\}$.
+
+\subsection*{Exercise 5.31}
+
+\textcolor{red}{(Similar to Exercise 5.30, the valuation $v$ is defined only on $K^\times$. So we also extend the domain of $v$ to $K$ in the same way. One checks easily that this definition satisfies (1) and (2).)}
+
+Let $A:= \{x \in K \mid v(x) \geq 0 \}$. We check that $A$ is a valuation ring of $K$.
+
+Since $v(0) = \infty \geq 0 \implies 0 \in A$.
+
+Since $v(1) = v(1) + v(1) \implies v(1)=0 \implies 1 \in A$. 
+
+Note $0 = v(1) = v((-1)^2) = v(-1) + v(-1) = 2v(-1)$. If $v(-1) > 0$, then $2v(-1) > 0$ as $\Gamma$ is a totally ordered abelian group. But this is wrong. So $v(-1) \leq 0$. Similarly, one sees that $v(-1) \geq 0$. Hence $v(-1) = 0$. Now, if $x \in A \implies v(-x) = v(-1) + v(x) = v(x) \geq 0 \implies -x \in A$.
+
+Let $x,y \in A \implies v(x),v(y) \geq 0 \implies v(x+y) \geq \min \{v(x),v(y)\} \geq 0$ and $v(xy) = v(x) + v(y) \geq 0 \implies x+y,xy \in A$.
+
+Let $0 \neq x \in K$. Note $0 = v(1) = v(x\cdot x^{-1}) = v(x) + v(x^{-1}) \implies v(x^{-1}) = -v(x)$. Now, suppose $x\notin A \implies v(x) < 0 \implies v(x^{-1}) = -v(x) > 0 \implies x^{-1} \in A$. Hence $A$ is a valuation ring of $K$.
+
+From the constructions of Exercise 5.30 and 5.31, we have the following maps:
+$$
+\begin{array}{ccc}
+\{ \text{valuation ring of } K\} & \to & \{v:K \sur v(K^\times) \cup \{\infty\}, \text{valuation of } K \text{ where } v(K^\times) \sbe \Gamma \}   \\
+A & \mapsto & v_A|_{K^\times}: K^\times \to K^\times/A^\times \text{ and } v_A(0) = \infty     \\
+\{x \in K \mid v(x) \geq 0\} & \mapsfrom & v
+\end{array}
+$$
+We claim that this is in fact a bijection.
+
+Given a valuation ring $A$ of $K$. Let $v_A$ be the corresponding valuation of $K$. We claim that $A = \{ x\in K \mid v_A(x) \geq 0 = v_A(1) \}$. (Note $0$ in here means the identity element of the group $K^\times/A^\times$, which is the image of $1$ under $v_A$.) Since $v_A(x) \geq v_A(1)$ is equivalent to say that $x \cdot 1^{-1} = x \in A$, so we are done.
+
+Conversely, given a valuation $v:K \sur v(K^\times) \cup \{\infty\}$ of $K$ where $v(K^\times) \sbe \Gamma$ is the value group of $v$ and $v(0)=\infty$. Let $A_v := \{x \in K \mid v(x) \geq 0\}$ be the corresponding valuation ring of $K$, and $v_{A_v}: K \sur K^\times/A_v^\times \cup \{\infty\}$ where $v_{A_v}|_{K^\times}$ is the natural reduction map. We claim that $\phi: K^\times/A_v^\times \isoto v(K^\times)  $, $v|_{K^\times} = \phi \circ v_{A_v}|_{K^\times}$ (so $v$ is essentially the same as $v_{A_v}$), and the order is preserved between $v$ and $v_{A_v}$.
+
+Let $U:=\ker v|_{K^\times}$. Note that
+\begin{align*}
+U &= \{ x \in K^\times \mid v(x)=0 \}    \\
+&= \{ x \in K^\times \mid v(x) \geq 0 \text{ and } v(x) = -v(x^{-1}) \leq 0 \}     \\
+&= \{ x \in K^\times \mid v(x) \geq 0 \text{ and } v(x^{-1}) \geq 0 \} 
+= A_v^\times  
+\end{align*}
+By condition (1) we know $v|_{K^\times}$ is a group homomorphism. So we have the isomorphism $\phi: K^\times/U = K^\times/A_v^\times \isoto v(K^\times)$. And $v|_{K^\times} = \phi \circ v_{A_v}|_{K^\times}$.
+
+Lastly, given $x,y\in K^\times$. Note that $v_{A_v}(x) \geq v_{A_v}(y) \iff xy^{-1} \in A_v \iff v(xy^{-1}) = v(x) -v(y) \geq 0 \iff v(x) \geq v(y)$. So the order is preserved between $v$ and $v_{A_v}$. (Note that we may only consider elements in $K^\times$.)
+
+\subsection*{Exercise 5.32}
+
+\subsection*{Exercise 5.33}
+
+\subsection*{Exercise 5.34}
+
+\subsection*{Exercise 5.35}
+
+\subsection*{Bonus 5.1} \label{Bonus 5.1}
+
+We show the following: Let $E/F$ be an algebraic extension and $\Omega$ be an algebraically closed field. Suppose there is an embedding $f: F \inj \Omega$, then $f$ can be extended to an embedding $g: E \inj \Omega$
+
+Let $\Sigma$ be the set of all pairs $(K,g)$ s.t. $F\sbe K \sbe E$ is an intermediate field and $g: K \inj \Omega$ is an embedding s.t. $g|_F = f$. Note that $\Sigma$ is non-empty because $(F.f) \in \Sigma$. We partially order the set by $(K,g) \leq (K',g') \iff K \sbe K'$ and $g'|_K = g$. Then by Zorn's lemma there is a maximal element in $\Sigma$, say $(K,g)$.
+
+We next claim that in fact $K=E$. (Then we are done.) Let $\alpha\in E$. By assumption $\alpha$ is algebraic over $F$ (so over $K$). Then we have an embedding
+$$
+g_\alpha: K(\alpha) \simeq K[x]/(\Irr_K(\alpha)) \simeq g(K)[x]/g(\Irr_K(\alpha)) \simeq g(K)(\beta) \inj \Omega
+$$
+where $\beta$ is any root of $g(\Irr_K(\alpha))$. (Note that $g: K \simeq g(K)$ induces an isomorphism $g: K[x] \simeq g(K)[x]$.) Since $K \sbe K(\alpha)$ and $g_\alpha|_K = g$, so $(K,g) \leq (K(\alpha),g_\alpha)$. And by the maximality of $(K,g)$ this implies $K=K(\alpha)$. So $\alpha \in K$.
+
+\end{document}
