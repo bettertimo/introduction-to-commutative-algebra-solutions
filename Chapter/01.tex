@@ -197,7 +197,7 @@ For the second one, it's equivalent to show that $\afk\bfk \sbe \pfk \iff \afk \
 
 For $\pfk\in X:=\Spec(A)$, we see from the definition of $X_f$ that $\pfk\in X_f$ if and only if $f\notin\pfk$.
 
-Let $\Bcal:=\{ X_f \mid f\in A\}$. We check that $\Bcal$ forms a basis for the Zariski topology. Let $U\sbe X$ be an open set and $\pfk\in U$. Then $U=X \setminus V(\afk)$ for some ideal $\afk$ in $A$ by Exercise 1.15 (i). Since $\pfk\in U \implies \pfk\notin V(\afk) \implies \afk\nsubseteq\pfk$. So we may choose $f\in\afk$ but $f\notin\pfk$. The latter implies $\pfk\in X_f$. And the former implies $(f)\sbe\afk \implies V(\afk)\sbe V(f) \implies U\spe X_f$. Hence we have $\pfk \in X_f \sbe U$.
+Let $\Bcal:=\{ X_f \mid f\in A\}$. We check that $\Bcal$ forms a basis for the Zariski topology. Let $U\sbe X$ be an open set and $\pfk\in U$. Then $U=X \setminus V(\afk)$ for some ideal $\afk$ in $A$ by Exercise 1.15 (i). Since $\pfk\in U \implies \pfk\notin V(\afk) \implies \afk\nsubseteq\pfk$. So there exists $f\in\afk$ but $f\notin\pfk$. The former implies $(f)\sbe\afk \implies V(f)\spe V(\afk) \implies X_f \sbe U$. And the latter implies $\pfk\in X_f$. Hence we have $\pfk \in X_f \sbe U$.
 
 (i) This is equivalent to show that both $f,g \notin \pfk \iff fg \notin \pfk$, which is clear.
 
