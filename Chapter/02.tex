@@ -12,11 +12,11 @@ Let $a \otimes b \in (\ZZ/m\ZZ) \otimes_\ZZ (\ZZ/n\ZZ)$ be a pure tensor. Since 
 
 Consider the exact sequence of $A$-modules,
 $$
-0 \lra \afk \lra A \lra A/\afk \lra 0
+0 \lra \afk \lra A \lra A/\afk \lra 0.
 $$
 Tensoring it with $M$ over $A$ gives the right exact sequence (by (2.18))
 $$
-\afk \otimes_A M \lra A \otimes_A M \lra (A/\afk) \otimes_A M \lra 0
+\afk \otimes_A M \lra A \otimes_A M \lra (A/\afk) \otimes_A M \lra 0.
 $$
 By (2.14) (iv), we have $A \otimes_A M \simeq M$. On the other hand, the image of $\afk \otimes_A M$ under this isomorphism is $\afk M$. So we have $(A/\afk) \otimes_A M \simeq M/\afk M$.
 
@@ -32,7 +32,7 @@ Let $\mfk$ be the maximal ideal of $A$ and $k:=A/\mfk$ be the residue field. For
 	= M \otimes_A (k \otimes_A N)
 	\simeq M \otimes_A (N \otimes_A k)
 	\simeq (M \otimes_A N) \otimes_A k    \\
-	&\simeq 0	
+	&\simeq 0.	
 \end{align*}
 On the other hand, since $M_k,N_k$ are finite dimensional vector spaces over a field $k$, say $M_k \simeq k^m$ and $N_k\simeq k^n$. Then
 $$
@@ -50,22 +50,22 @@ is exact if and only if
 $$
 0 \lra N' \otimes_A M_i \lra N \otimes_A M_i \lra N'' \otimes_A M_i \lra 0
 $$
-is exact for each $i\in I$. And this is easy to check.
+is exact for all $i\in I$. And this is easy to check.
 
 \subsection*{Exercise 2.5}
 
-Note that $A[x] \simeq \oplus_{i=0}^\infty A$ as $A$-modules. Let $0 \to M' \to M \to M'' \to 0$ be any exact sequence of $A$-modules. Then we have
+Note that $A[x] \simeq \oplus_{i=0}^\infty A$ as $A$-modules. So by Exercise 2.4, it's sufficient to show that $A$ is a flat $A$-module. Let $0 \to M' \to M \to M'' \to 0$ be any exact sequence of $A$-modules. Then we have
 $$
 \begin{tikzcd}
 0 \arrow{r} & M' \otimes_A A \arrow{r} \visoarrow{d} & M \otimes_A A \arrow{r} \visoarrow{d} & M'' \otimes_A A \arrow{r} \visoarrow{d} & 0 \\ 
 0 \arrow{r} & M' \arrow{r} & M \arrow{r} & M'' \arrow[r] & 0
 \end{tikzcd}
 $$
-is also exact by (2.14) (iv). So by (2.19), $A$ is a flat $A$-module. Hence, by Exercise 2.4, $ \oplus_{i=0}^\infty A \simeq A[x]$ is a flat $A$-module. And $A[x]$ is clearly an $A$-algebra. So we are done.
+is still exact by (2.14)(iv). So by (2.19), $A$ is a flat $A$-module. And $A[x]$ is clearly an $A$-algebra. So we are done.
 
 \subsection*{Exercise 2.6}
 
-It's easy to check that $M[x]$ has an $A[x]$-module structure. We skip the tedious calculation. Note that we have the following composition of $A$-module isomorphisms
+It's easy to check that $M[x]$ has an $A[x]$-module structure. We skip the tedious calculation. Note that we have the following $A$-module isomorphisms
 $$
 A[x] \otimes_A M
 \simeq (\oplus_{i=0}^\infty A) \otimes_A M
@@ -104,7 +104,7 @@ is still exact. So $M \otimes_A N$ is flat.
 $$
 0 \lra P' \otimes_A B \lra P \otimes_A B \lra P'' \otimes_A B \lra 0
 $$
-is still exact as $A$-modules. And hence, as $B$-modules by the remark before (2.17). Moreover, since $N$ is flat as a $B$-module, we have
+is still exact as $A$-modules, and hence, as $B$-modules by the remark before (2.17). Moreover, since $N$ is flat as a $B$-module, we have
 $$
 \begin{tikzcd}
 0 \arrow{r} & (P' \otimes_A B) \otimes_B N \arrow{r} \visoarrow{d} &  (P \otimes_A B) \otimes_B N \arrow{r} \visoarrow{d} &  (P'' \otimes_A B) \otimes_B N \arrow{r} \visoarrow{d} & 0 \\ 
@@ -115,21 +115,29 @@ is still exact as $B$-modules. And hence, as $A$-modules. So $N$ is flat as an $
 
 \subsection*{Exercise 2.9}
 
-Suppose $0 \to M' \overset{f}{\to} M \overset{g}{\to} M'' \to 0$. So we have the isomorphism $\ovl{g}: M/f(M') \isoto M''$. Let $\{m'_1,\ldots,m'_r\}$ and $\{m''_1,\ldots,m''_s\}$ be generating sets of $M'$ and $M''$, respectively. And let $m_i \in M$ s.t. $\ovl{g}(m_i + f(M')) = m''_i$ for all $i$. We claim that $\{f(m'_1),\ldots,f(m'_r),m_1,\ldots,m_s\}$ is a generating set of $M$.
+Suppose $0 \to M' \overset{f}{\to} M \overset{g}{\to} M'' \to 0$. Let $\{m'_1,\ldots,m'_r\}$ and $\{m''_1,\ldots,m''_s\}$ be generating sets of $M'$ and $M''$, respectively. And take $m_i \in M$ s.t. $g(m_i) = m''_i$ for all $i$. We claim that $\{f(m'_1),\ldots,f(m'_r),m_1,\ldots,m_s\}$ is a generating set of $M$.
 
-Let $m\in M$. Write $\ovl{g}(m+f(M')) = \sum a_im''_i$ for some $a_i \in A$. Note that $\ovl{g}(\sum a_im_i + f(M')) = \sum a_im''_i = \ovl{g}(m+f(M'))$. So we have $m+f(M') = \sum a_im_i + f(M')$. We next write $m = \sum a_im_i + f(m')$ for some $m'\in M'$. Then $m' = \sum b_j m'_j$ for some $b_j \in A$. And we have $m = \sum a_im_i + f( \sum b_j m'_j) = \sum a_im_i + \sum b_jf(m'_j)$, as desired.
+Let $m\in M$. Write $g(m) = \sum a_im''_i$ for some $a_i \in A$. Note
+$$
+g(m) = \sum a_im''_i = \sum a_ig(m_i) = g\left(\sum a_im_i\right).
+$$
+So $m-\sum a_im_i \in \ker g = \im f$. Say $f(m') = m-\sum a_im_i$ for some $m' \in M'$. Write $m' = \sum b_jm'_j$ for some $b_j\in A$. Then
+$$
+f(m') = f\left(\sum b_jm'_j\right) = \sum b_j f(m'_j) = m-\sum a_im_i.
+$$
+Hence, $m = \sum b_j f(m'_j) + \sum a_im_i$, as desired.
 
 \subsection*{Exercise 2.10}
 
-We will show that $N = \afk N + u(M)$. (Then by (2.7), $N = u(M)$ and so $u$ is surjective.) Let $\ovl{u} : M/\afk M \to N/\afk N$ be the induced homomorphism where $\ovl{u}(m+\afk M) = u(m) + \afk N$. Given $n\in N$. Since $\ovl{u}$ is surjective, there exists $m+\afk M \in M/\afk M$ s.t. $\ovl{u}(m+\afk M) := u(m) + \afk N = n + \afk N$. So we have $n \in u(m) + \afk N \sbe u(M) + \afk N$. This shows that $N \sbe \afk N + u(M)$. The other direction is clear.
+We will show that $N = \afk N + u(M)$. (Then by (2.7), $N = u(M)$ and so $u$ is surjective.) Let $\ovl{u} : M/\afk M \to N/\afk N$ be the induced homomorphism. Given $n\in N$. Since $\ovl{u}$ is surjective, there exists $m+\afk M \in M/\afk M$ s.t. $\ovl{u}(m+\afk M) := u(m) + \afk N = n + \afk N$. So we have $n \in u(m) + \afk N \sbe u(M) + \afk N$. This shows that $N \sbe \afk N + u(M)$. The other direction is clear.
 
 \subsection*{Exercise 2.11}
 
 Take a maximal ideal $\mfk$ of $A$. Note that by (2.14),
 $$
-A^m \otimes_A (A/\mfk) = (\oplus_{i=1}^m A) \otimes_A (A/\mfk) \simeq \oplus_{i=1}^m (A \otimes_A (A/\mfk)) \simeq \oplus_{i=1}^m A/\mfk
+A^m \otimes_A (A/\mfk) = (\oplus_{i=1}^m A) \otimes_A (A/\mfk) \simeq \oplus_{i=1}^m (A \otimes_A (A/\mfk)) \simeq \oplus_{i=1}^m A/\mfk.
 $$
-So by tensoring with $A/\mfk$ to the isomorphism $A^m \simeq A^n$, we have $\oplus_{i=1}^m A/\mfk \simeq \oplus_{i=1}^n A/\mfk$. This shows $m=n$ as this is an isomorphism between vector spaces.
+So by tensoring with $A/\mfk$ to the isomorphism $A^m \simeq A^n$, we have $\oplus_{i=1}^m A/\mfk \simeq \oplus_{i=1}^n A/\mfk$. This shows that $m=n$ as it is an isomorphism between vector spaces.
 
 Suppose now $\phi : A^m \to A^n$ is surjective. Then by tensoring with $A/\mfk$ we have $\phi \otimes 1: A^m \otimes_A (A/\mfk) \to A^n \otimes_A (A/\mfk)$ is also surjective. So $\oplus_{i=1}^m A/\mfk \to \oplus_{i=1}^n A/\mfk$ is a surjective map between vector spaces, which implies $m\geq n$.
 
@@ -137,25 +145,25 @@ Suppose now $\phi : A^m \to A^n$ is injective but $m>n$. Let $\iota$ be the natu
 $$
 \psi^k + a_1\psi^{k-1} + \cdots + a_k = 0
 $$
-for some $a_i\in A$. We may assume $k$ is minimal. And this implies $a_k \neq 0$ as $\psi$ is injective. We note that the last coordinate of $\psi(a)$ must be zero for all $a\in A^m$. So by applying $a=(0,\ldots,0,1) \in A^m$ to the above equation and considering the last coordinate, we have $a_k = 0$, a contradiction.
+for some $a_i\in A$. We may assume $k$ is minimal. And this implies $a_k \neq 0$ as $\psi$ is injective. Now, note that the last coordinate of $\psi(a)$ must be zero for all $a\in A^m$. So by applying $a=(0,\ldots,0,1) \in A^m$ to the above equation and considering the last coordinate, we have $a_k = 0$, a contradiction.
 
 \subsection*{Exercise 2.12}
 
-$\phi: M\to A^n$ induces an isomorphism $\ovl{\phi}: M/\ker \phi \isoto A^n$ where $\ovl{\phi}(m+\ker\phi) = \phi(m)$. Let $\{e_1,\ldots,e_n\}$ be a basis of $A^n$ and take $u_i\in M$ s.t. $\phi(u_i)=e_i$ for all $i$. Let $N$ be the submodule of $M$ generated by $u_1,\ldots,u_n$. We claim that $M = \ker\phi \oplus N$.
+The surjective homomorphism $\phi: M\to A^n$ induces an isomorphism $\ovl{\phi}: M/\ker \phi \isoto A^n$ where $\ovl{\phi}(m+\ker\phi) = \phi(m)$. Let $\{e_1,\ldots,e_n\}$ be a basis of $A^n$ and take $u_i\in M$ s.t. $\phi(u_i)=e_i$ for all $i$. Let $N$ be the submodule of $M$ generated by $u_1,\ldots,u_n$. We claim that $M = \ker\phi \oplus N$.
 
 Given $m\in M$. Write $\ovl{\phi}(m+\ker\phi) = \sum_{i=1}^n a_ie_i$ for some $a_i\in A$. Then $m+\ker\phi = \ovl{\phi}^{-1}(\sum_{i=1}^n a_ie_i) = \sum_{i=1}^n a_iu_i + \ker\phi$. So we have $m \in \ker\phi + N$ and hence $M = \ker\phi + N$.
 
-Suppose there exists $m \in \ker\phi \cap N$. Write $m = \sum_{i=1}^n a_iu_i$ for some $a_i\in A$. Then $\phi(m) = \sum_{i=1}^n a_i \phi(u_i) =  \sum_{i=1}^n a_i e_i = 0$. This implies $a_i=0$ for all $i$ and so $m=0$. Hence, $\ker\phi \cap N=0$. This completes our claim.
+Given $m \in \ker\phi \cap N$. Write $m = \sum_{i=1}^n a_iu_i$ for some $a_i\in A$. Then $\phi(m) = \sum_{i=1}^n a_i \phi(u_i) =  \sum_{i=1}^n a_i e_i = 0$. This implies $a_i=0$ for all $i$ and so $m=0$. Hence, $\ker\phi \cap N=0$. This completes our claim.
 
 Since $M = \ker\phi \oplus N$ is finitely generated, we let $\{m_1,\ldots,m_k\}$ be its generating set. For each $i$, write $m_i = x_i + n_i$ where $x_i\in\ker\phi$ and $n_i \in N$. We check that $x_1,\ldots,x_k$ generates $\ker\phi$. Suppose $x\in \ker\phi$. Write $x = \sum_{i=1}^k c_im_i = \sum_{i=1}^k c_ix_i + \sum_{i=1}^k c_in_i$ for some $c_i \in A$. Note that $\sum_{i=1}^k c_in_i = x - \sum_{i=1}^k c_ix_i \in \ker\phi \cap N = 0$. So in fact $x = \sum_{i=1}^k c_ix_i$. This completes the proof.
 
 \subsection*{Exercise 2.13}
 
-Clearly there is an $A$-bilinear map $B \times N \to N$ defined by $(b,y)\mapsto by$. This induces by (2.12) an $A$-linear map $p: B \otimes_A N \to N$ where $p(b\otimes y) = by$. Note that $p\circ g = \id_N$, so we know $g$ is injective. We next claim that $B \otimes_A N = \im g \oplus \ker p$.
+Clearly there is an $A$-bilinear map $B \times N \to N$ defined by $(b,y)\mapsto by$. This induces by (2.12) an $A$-linear map $p: B \otimes_A N \to N$ where $p(b\otimes y) = by$. Since $p\circ g = \id_N$, so we know $g$ is injective. We next claim that $B \otimes_A N = \im g \oplus \ker p$.
 
-Let $x\in B \otimes_A N$. Write $x = g(p(x)) + x - g(p(x))$. Note that $g(p(x)) \in \im g$. And since $p(x - g(p(x))) = p(x) - p(g(p(x))) = p(x) - p(x) = 0$, so $x - g(p(x)) \in \ker p$. This means $x \in \im g + \ker p$ and hence $B \otimes_A N = \im g + \ker p$.
+Given $x\in B \otimes_A N$. Write $x = g(p(x)) + x - g(p(x))$. Note that $g(p(x)) \in \im g$. And since $p(x - g(p(x))) = p(x) - p(g(p(x))) = p(x) - p(x) = 0$, so $x - g(p(x)) \in \ker p$. This shows that $x \in \im g + \ker p$ and hence $B \otimes_A N = \im g + \ker p$.
 
-Suppose there exists $x \in \im g \cap \ker p$. Write $x = 1 \otimes y$ for some $y\in N$, then $0 = p(x) = p(1 \otimes y) = y$ and so $x = 0$. This means $\im g \cap \ker p = 0$. So our claim is completed.
+Given $x \in \im g \cap \ker p$. Write $x = 1 \otimes y$ for some $y\in N$, then $0 = p(x) = p(1 \otimes y) = y$ and so $x = 0$. This means $\im g \cap \ker p = 0$. So our claim is completed.
 
 \subsection*{Exercise 2.14}
 

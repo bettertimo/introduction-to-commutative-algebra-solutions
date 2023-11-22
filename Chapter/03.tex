@@ -10,21 +10,21 @@ Write $M = Am_1 + \cdots + Am_n$ for some $m_1,\ldots,m_n \in M$.
 
 $(\Rightarrow)$ Suppose $S^{-1}M = 0$. Then $m_i/1 = 0/1$ for all $i=1,\ldots,n$. So there exists $s_i \in S$ s.t. $s_im_i = 0$. Set $s:=\prod_{i=1}^n s_i \in S$, then $sM=0$.
 
-$(\Leftarrow)$ Suppose there exists $s\in S$ s.t. $sM=0$. Then $sm_i = 0$ for all $i=1,\ldots,n$. Let $m/t \in S^{-1}M$ be given. Write $m = \sum_{i=1}^n a_im_i$ where $a_i\in A$. Note that we have $sm = 0$. So by definition $m/t = 0/1$ and hence $S^{-1}M=0$.
+$(\Leftarrow)$ Suppose there exists $s\in S$ s.t. $sM=0$. Let $m/t \in S^{-1}M$ be any element. Then we have $sm=0$, and so by definition, $m/t = 0/1$. Hence $S^{-1}M=0$.
 
 \subsection*{Exercise 3.2}
 
-Let $a/s \in S^{-1}\afk$. Recall from (1.9) that $a/s \in \Jcal(S^{-1}A)$, the Jacobson radical of $S^{-1}A$, $\iff 1-a/s \cdot b/t = (st - ab)/(st) \in S^{-1}A$ is a unit for all $b/t \in S^{-1}A$. Note that since $s,t \in S = 1 + \afk$ and $a\in\afk$, we have $st - ab \equiv 1 \pmod{\afk}$ and so $st - ab \in S$. This implies $1-a/s \cdot b/t$ is a unit in $S^{-1}A$ and hence $a/s \in \Jcal(S^{-1}A)$.
+Let $a/s \in S^{-1}\afk$. From (1.9) we know that $a/s \in \Jcal(S^{-1}A) \iff 1-a/s \cdot b/t = (st - ab)/(st) \in S^{-1}A$ is a unit for all $b/t \in S^{-1}A$. Note that since $s,t \equiv 1 \pmod{\afk}$ and $a\in\afk$, we have $st - ab \equiv 1 \pmod{\afk}$. So $st - ab \in S$. This implies $1-a/s \cdot b/t$ is a unit in $S^{-1}A$ and hence $a/s \in \Jcal(S^{-1}A)$.
 
-We now give another proof of (2.5). Note that if $M$ is a finitely generated $A$-module, then $S^{-1}M$ is a finitely generated $S^{-1}A$-module. So $\afk M=M$ implies $S^{-1}M = (S^{-1}\afk)(S^{-1}M)$ where $S^{-1}\afk \sbe \Jcal(S^{-1}A)$ by the first part of Exercise 3.2. So by Nakayama's lemma (2.6) we have $S^{-1}M=0$. Then by Exercise 3.1 there exists $x\in S = 1 + \afk$ (so $x \equiv 1 \pmod{\afk}$) s.t. $xM=0$.
+We now give another proof of (2.5). Note that by (3.4), if $M$ is a finitely generated $A$-module, then $S^{-1}M$ is a finitely generated $S^{-1}A$-module. Moreover, $\afk M=M$ implies $S^{-1}M = (S^{-1}\afk)(S^{-1}M)$ where $S^{-1}\afk \sbe \Jcal(S^{-1}A)$ by the first part of the proof. So by Nakayama's lemma (2.6) we have $S^{-1}M=0$. Then by Exercise 3.1 there exists $x\in S = 1 + \afk$ (so $x \equiv 1 \pmod{\afk}$) s.t. $xM=0$.
 
 \subsection*{Exercise 3.3}
 
 It's clear that $ST$ (resp. $U$) is a multiplicatively closed subset of $A$ (resp. $S^{-1}A$). Consider the natural ring homomorphisms $f:A \to (ST)^{-1}A$, $g:A \to S^{-1}A \to U^{-1}(S^{-1}A)$ and the following diagram:
 $$
 \begin{tikzcd}
-  A \arrow[r, "f"] \arrow[dr, "g"'] & (ST)^{-1}A \arrow[d, dashrightarrow, "h"]   \\
-										& U^{-1}(S^{-1}A)
+  A \arrow[r, "f"] \arrow[d, "g"'] & (ST)^{-1}A \arrow[dl, dashrightarrow, "h"]   \\
+  U^{-1}(S^{-1}A).
 \end{tikzcd}
 $$
 We show that $g$ satisfies the three conditions in (3.2). (Then we will obtain the desired isomorphism $h: (ST)^{-1}A \isoto U^{-1}(S^{-1}A)$.)
@@ -51,9 +51,9 @@ Let $b_1/s_1, b_2/s_2 \in S^{-1}B$ and $a/s' \in S^{-1}A$. We see that
 \begin{align*}
 \phi \left( \frac{b_1}{s_1} + \frac{b_2}{s_2} \right)
 &= \phi \left( \frac{s_2 \cdot b_1 + s_1 \cdot b_2}{s_1s_2} \right)
-= \frac{s_2 \cdot b_1 + s_1 \cdot b_2}{f(s_1s_2)}
-= \frac{f(s_2)b_1 + f(s_1)b_2}{f(s_1)f(s_2)}     \\
-&= \frac{b_1}{f(s_1)} + \frac{b_2}{f(s_2)}
+= \frac{s_2 \cdot b_1 + s_1 \cdot b_2}{f(s_1s_2)}  \\
+&= \frac{f(s_2)b_1 + f(s_1)b_2}{f(s_1)f(s_2)}  
+= \frac{b_1}{f(s_1)} + \frac{b_2}{f(s_2)}
 = \phi \left( \frac{b_1}{s_1} \right) + \phi \left( \frac{b_2}{s_2} \right)
 \end{align*}
 and
@@ -64,7 +64,7 @@ $$
 = \frac{f(a)b}{f(s's)}
 = \frac{f(a)b}{f(s')f(s)}
 = \frac{a}{s'} \cdot \frac{b}{f(s)}
-= \frac{a}{s'} \cdot \phi \left( \frac{b}{s} \right)
+= \frac{a}{s'} \cdot \phi \left( \frac{b}{s} \right).
 $$
 So $\phi$ is an $S^{-1}A$-module homomorphism.
 
@@ -72,17 +72,46 @@ The surjectivity is clear. On the other hand, suppose $b/s \in S^{-1}B$ s.t. $\p
 
 \subsection*{Exercise 3.5}
 
-Suppose $A_\pfk$ has no nilpotent element $\neq0$ for all prime ideal $\pfk$. By definition and (3.12) this means $\Ncal(A_\pfk) = \Ncal(A)_\pfk = 0$ for all $\pfk$. (Here we view $\Ncal(A)$ as an $A$-module.) So by (3.8) we have $\Ncal(A)=0$, i.e., $A$ has no nilpotent element $\neq0$.
+Suppose $A_\pfk$ has no nilpotent element $\neq0$ for all prime ideal $\pfk$. Then by definition and (3.12) this means $\Ncal(A_\pfk) = \Ncal(A)_\pfk = 0$ for all prime ideals $\pfk$. So by (3.8) we have $\Ncal(A)=0$, i.e., $A$ has no nilpotent element $\neq0$.
 
-If $A_\pfk$ is an integral domain for all prime $\pfk$, then $A$ is not necessarily an integral domain. Consider $A=\ZZ/6\ZZ$. Then the prime ideals of $A$ are $\pfk = \{0,3\}$ and $\{0,2,4\}$. (We skip the detail calculations.)
+If $A_\pfk$ is an integral domain for all $\pfk$, then $A$ is not necessarily an integral domain. Consider $A=\ZZ/6\ZZ$. The prime ideals of $A$ are $\pfk = \{0,3\}$ and $\{0,2,4\}$. (We skip the detail calculations.)
 
 \subsection*{Exercise 3.6}
 
-Note that $\Sigma$ is non-empty because $\{1\} \in \Sigma$. Moreover, if $(S_i)_{i\in I}$ is a chain in $\Sigma$, then it's easy to see that $\bigcup_{i\in I} S_i \in \Sigma$ which is an upper bound of $(S_i)_{i\in I}$. So by Zorn's lemma, $\Sigma$ has a maximal element.
+Note that $\Sigma$ is non-empty because $\{1\} \in \Sigma$. Moreover, if $(S_i)_{i\in I}$ is a chain in $\Sigma$, then it's easy to see that $\bigcup_{i\in I} S_i \in \Sigma$ is an upper bound of $(S_i)_{i\in I}$. So by Zorn's lemma, $\Sigma$ has a maximal element.
 
-Given $S\in \Sigma$. Suppose $S$ is maximal. Let $\pfk \sbe A \setminus S$ be a prime ideal, then $A \setminus \pfk \in \Sigma$ and $A \setminus \pfk \spe S$. By the maximality of $S$ we have $A \setminus \pfk = S$ and so $\pfk = A \setminus S$. Conversely, suppose $A\setminus S$ is a minimal prime ideal. Let $T \in \Sigma$ with $T\spe S$, then $A \setminus T$ is a prime ideal and $A \setminus T \sbe A \setminus S$. So by the minimality of $A \setminus S$ we have $A \setminus T = A \setminus S$ and so $T=S$.
+$(\Rightarrow)$ Suppose $S \in \Sigma$ is maximal. We first claim that $A\setminus S$ can not contain any prime ideal of $A$ properly. Let $\pfk \sbe A \setminus S$ be any prime ideal (if exists). Then $A \setminus \pfk \in \Sigma$ and $A \setminus \pfk \spe S$. So by the maximality of $S$, we have $A \setminus \pfk = S$ and so $\pfk = A \setminus S$.
+
+Next, we claim that $A\setminus S$ is a prime ideal. (Then it will be a minimal prime ideal of $A$ by the first claim.) Consider $\Ical:=\{\afk \mid \afk \sbe A\setminus S \text{ is an ideal}\}$, which is non-empty as $\{0\} \in \Ical$. Ordered by inclusion, we see that by Zorn's lemma, there is a maximal element in $\Ical$, say $\afk \in\Ical$. We will show that $\afk$ is a prime ideal and $\afk =A\setminus S$.
+
+As $\afk \sbe A\setminus S$, we know by (3.11)(ii) that $\afk^e \subset S^{-1}A$. So by (3.11)(iv) $\afk^e \sbe S^{-1}\pfk$ for some maximal ideal (hence prime ideal) $S^{-1}\pfk$ of $S^{-1}A$. This implies that $\afk \sbe \afk^{ec} \sbe \pfk \sbe A\setminus S$ by the correspondence theorem again. Hence by the maximality of $\afk$, we have $\afk = \pfk \sbe A\setminus S$. Finally, by the first claim, this implies $\afk = \pfk = A\setminus S$.
+
+$(\Leftarrow)$ Suppose $S\in\Sigma$ and $A\setminus S$ is a minimal prime ideal of $A$. Consider $\Scal:=\{T\in\Sigma \mid T\spe S\}$, which is non-empty as $S\in \Scal$. Ordered by inclusion, we see that by Zorn's lemma, there is a maximal element in $\Scal$, say $T \in\Scal$.
+
+Similar to the argument in $(\Rightarrow)$, we see that $A\setminus T$ is a prime ideal. But as $A\setminus T \sbe A\setminus S$, so by the minimality of $A\setminus S$, we have $A\setminus T = A\setminus S$, or equivalently, $T=S$. This shows that $S\in\Sigma$ is a maximal element.
 
 \subsection*{Exercise 3.7}
+
+(i) $(\Rightarrow)$ We claim that $A\setminus S$ is the union of prime ideals of $A$ contained in $A\setminus S$. Let $x\in A\setminus S$. Note that if $x/1 \in S^{-1}A$ is a unit, then there exists $a/s \in S^{-1}A$ s.t. $x/1 \cdot a/s = xa/s = 1/1$. So there exists $t\in S$ s.t. $txa = ts \in S$. As $S$ is saturated, this implies $xa\in S$ and so $x\in S$, a contradiction. So we know $x/1 \in S^{-1}A$ is a non-unit.
+
+This shows that $x/1$ is contained in some maximal ideal (hence prime ideal) of $S^{-1}A$. Then by (3.11)(iv), $x$ is contained in some prime ideal $\pfk$ of $A$ which doesn't meet $S$. In other words, $x\in \pfk \sbe A\setminus S$.
+
+$(\Leftarrow)$ Suppose $A\setminus S$ is a union of prime ideals. Given $x,y \in A$ s.t. $xy \in S$ and WLOG assume $x \notin S$. Then $x\in \pfk$ for some prime ideal $\pfk \sbe A\setminus S$. This implies $xy \in\pfk \sbe A\setminus S$ and so $xy\notin S$, a contradiction.
+
+(ii) Let $\ovl{S}:=A \setminus \bigcup_{\pfk\cap S=\emptyset} \pfk$. Note that $\ovl{S}$ contains $S$. We check that $\ovl{S}$ is a multiplicatively closed subset. Clearly, $1\in\ovl{S}$. Given $x,y\in\ovl{S}\implies x,y\notin \bigcup_{\pfk\cap S=\emptyset} \pfk \implies x,y \notin \pfk$ for all prime ideals $\pfk$ which don't meet $S \implies xy \notin \pfk$ for all prime ideals $\pfk$ which don't meet $S \implies xy\notin  \bigcup_{\pfk\cap S=\emptyset} \pfk \implies xy\in\ovl{S}$. This shows that $\ovl{S}$ is a multiplicatively closed subset. Moreover, $\ovl{S}$ is saturated by (i).
+
+Suppose $T\spe S$ is another saturated multiplicatively closed subset. By (i), we have $A\setminus T = \bigcup_{\pfk\sbe A\setminus T} \pfk$. Note that $\pfk \sbe A\setminus T \sbe A\setminus S \implies \pfk \cap S = \emptyset$. This implies that $A\setminus T = \bigcup_{\pfk\sbe A\setminus T} \pfk \sbe \bigcup_{\pfk \cap S =\emptyset} \pfk$ and so $T \spe A \setminus \bigcup_{\pfk\cap S=\emptyset} \pfk = \ovl{S}$. This shows that $\ovl{S}$ is the unique smallest one.
+
+Now, consider $S=1+\afk$. We find $\bigcup_{\pfk\cap S=\emptyset} \pfk$. Note that $\pfk \cap S \neq \emptyset \iff \afk+\pfk=(1)$. So
+$$
+\bigcup_{\pfk\cap S=\emptyset} \pfk
+= \bigcup_{\afk + \pfk \neq (1)} \pfk
+= \bigcup_{\afk + \mfk \neq (1)} \mfk
+= \bigcup_{\afk\sbe\mfk} \mfk.
+$$
+For more details in the second equality: If $\afk + \pfk \neq (1)$, then $\afk + \pfk \sbe \mfk$ for some maximal ideal $\mfk$. So we have $\pfk \sbe \mfk$ and $\afk+\mfk = \mfk \neq(1)$. Conversely, if $\mfk$ is a maximal ideal s.t. $\afk + \mfk \neq (1)$, then it is automatically a prime ideal $\pfk$ s.t. $\afk + \pfk \neq (1)$.
+
+From the above, we have $\ovl{S}=A \setminus \bigcup_{\afk\sbe\mfk} \mfk$.
 
 \subsection*{Exercise 3.8}
 
@@ -114,26 +143,24 @@ Let $y\in \ker g'$. Then $y\in T(M)$ and $g'(y)=g(y)=0$. Take $0\neq a \in A$ s.
 = \ker \phi' 
 &= \{ x \in M \mid x/1 = 0/1 \in S^{-1}M \}   \\
 &= \{ x \in M \mid \exists a\in S = A \setminus \{0\} \text{ s.t. } ax = 0 \}   \\
-&= T(M)
+&= T(M).
 \end{align*}
 
 \subsection*{Exercise 3.13}
 
-Let $m/s \in T(S^{-1}M)$. Then there exists $a/t \neq 0/1 \in S^{-1}A$ (so $ba\neq 0$ for all $b\in A$) s.t. $a/t \cdot m/s = (am)/(ts) = 0/1 \in S^{-1}M$. So there exists $b \in S$ s.t. $b(am) = 0$. Since $ba \neq 0$ we have $m \in T(M)$. So $m/s \in S^{-1}T(M)$.
+Let $m/s \in T(S^{-1}M)$. Then there exists $a/t \neq 0/1 \in S^{-1}A$ (so $ba\neq 0$ for all $b\in S$) s.t. $a/t \cdot m/s = (am)/(ts) = 0/1 \in S^{-1}M$. So there exists $b \in S$ s.t. $b(am) = 0$. Since $ba \neq 0$ we have $m \in T(M)$. So $m/s \in S^{-1}T(M)$.
 
-Conversely, let $m/s \in S^{-1}T(M)$. Then there exists $0 \neq a \in A$ s.t. $am=0$. Note that $a/1 \neq 0/1$ as $A$ is an integral domain, and we have $a/1 \cdot m/s = 0/s = 0/1 \in S^{-1}M$. So $m/s \in T(S^{-1}M)$.
+Conversely, let $m/s \in S^{-1}T(M)$. Then there exists $0 \neq a \in A$ s.t. $am=0$. Note that $a/1 \cdot m/s = am/s = 0/s = 0/1 \in S^{-1}M$ and $a/1 \neq 0/1$ in $S^{-1}A$ as $A$ is an integral domain. So $m/s \in T(S^{-1}M)$.
 
 (i) $\Rightarrow$ (ii) $T(M)=0 \implies T(M_\pfk) = T(M)_\pfk = 0$.
 
 (ii) $\Rightarrow$ (iii) Clear.
 
-(iii) $\Rightarrow$ (i) Suppose $0 = T(M_\mfk) = T(M)_\mfk$ for all maximal ideal $\mfk$, then by (3.8) $T(M)=0$.
+(iii) $\Rightarrow$ (i) Suppose $0 = T(M_\mfk) = T(M)_\mfk$ for all maximal ideals $\mfk$, then by (3.8) $T(M)=0$.
 
 \subsection*{Exercise 3.14}
 
-Viewing $M/\afk M$ as an $A$-module, by (3.8) and (3.4) it's enough to check that $(M/\afk M)_\mfk = M_\mfk/(\afk M)_\mfk = 0$ for all maximal ideals $\mfk$. When $\mfk \spe \afk$, we immediately have $M_\mfk/(\afk M)_\mfk = 0$ by the assumption. And when $\mfk \nspe \afk$, we take $a\in\afk$ but $a \notin \mfk$. Then $a/a = 1/1 \in \afk_\mfk \implies \afk_\mfk = A_\mfk \implies (\afk M)_\mfk = \afk_\mfk M_\mfk = A_\mfk M_\mfk = M_\mfk \implies M_\mfk/(\afk M)_\mfk = 0$. This completes the proof.
-
-(From another point of view, we may regard $M/\afk M$ as an $A/\afk$-module and note that by the correspondence theorem (1.1), the maximal ideals of $A/\afk$ correspond to the maximal ideals of $A$ containing $\afk$.)
+Viewing $M/\afk M$ as an $(A/\afk)$-module, by (3.8), it's enough to check that $(M/\afk M)_{\ovl{\mfk}} = 0$ for all maximal ideals $\ovl{\mfk}$ of $A/\afk$. Note that by the correspondence theorem, $\ovl{\mfk} = \{\ovl{a} \mid a\in\mfk\}$ for some maximal ideal $\mfk$ of $A$ containing $\afk$. Now, given any $\ovl{m}/\ovl{a} \in (M/\afk M)_{\ovl{\mfk}}$ where $\ovl{m} \in M/\afk M$ and $\ovl{a} \in (A/\afk) \setminus \ovl{\mfk}$ (so that $a \in A \setminus \mfk$). As $M_\mfk=0$, we have $m/a = 0/1$ in $M_\mfk$. So there exists $b\in A\setminus \mfk$ (so that $\ovl{b} \in (A/\afk) \setminus\ovl{\mfk}$) s.t. $bm=0$ in $M$. This implies $\ovl{b}\cdot\ovl{m} = \ovl{bm} = \ovl{0}$ in $M/\afk M$. So $\ovl{m}/\ovl{a} = \ovl{0}/\ovl{1}$ in $(M/\afk M)_{\ovl{\mfk}}$. Hence, $(M/\afk M)_{\ovl{\mfk}}=0$.
 
 \subsection*{Exercise 3.15}
 
@@ -165,6 +192,63 @@ Suppose now there is a generating set $\{y_1,\ldots,y_m\}$ of $F$ but $m<n$. The
 \subsection*{Exercise 3.18}
 
 \subsection*{Exercise 3.19}
+
+(i) By (3.8), $M=0 \iff M_\pfk = 0$ for all prime ideals $\pfk$ of $A \iff \Supp(M) = \emptyset$.
+
+(ii) $\pfk \notin V(\afk) \iff \afk \nsbe \pfk \iff$ there exists $f \in \afk$ but $f \notin \pfk \iff f/f = 1/1 \in \afk_\pfk \sbe A_\pfk\iff \afk_\pfk = A_\pfk \iff (A/\afk)_\pfk = A_\pfk/\afk_\pfk = 0$ by (3.4) $\iff \pfk \notin \Supp(A/\afk)$.
+
+(iii) By (3.3), we have $0 \to M'_\pfk \to M_\pfk \to M''_\pfk \to 0$ is exact for any prime ideal $\pfk$ of $A$. So $\pfk \notin \Supp(M) \iff M_\pfk=0 \iff M'_\pfk = M''_\pfk = 0 \iff \pfk \notin \Supp(M') \bigcup \Supp(M'')$.
+
+(iv) By (3.4)(i) (which is still true for any family of submodules), we have $M_\pfk = \sum (M_i)_\pfk$. So $\pfk \notin \Supp(M) \iff M_\pfk = 0 \iff (M_i)_\pfk = 0$ for all $i \iff \pfk \notin \Supp(M_i)$ for all $i \iff \pfk \notin \bigcup \Supp(M_i)$.
+
+(v) Let $\{m_1,\ldots,m_n\}$ be a generating set of $M$, so that $M = \sum_{i=1}^n Am_i$. Then
+\begin{align*}
+\Supp(M)
+&\overset{\text{(iv)}}{=} \bigcup_{i=1}^n \Supp(Am_i) = \bigcup_{i=1}^n \Supp(A/\Ann(m_i))  \quad \text{(as } Am_i \simeq A/\Ann(m_i) \text{)} \\ 
+&\overset{\text{(ii)}}{=} \bigcup_{i=1}^n V(\Ann(m_i)) 
+=V\left(\bigcap_{i=1}^n \Ann(m_i) \right) \quad \text{(by Exercise 1.15 or (1.11))} \\ 
+&= V(\Ann(M)).
+\end{align*}
+
+(vi) $\pfk \notin \Supp(M\otimes_A N) \iff (M\otimes_A N)_\pfk = M_\pfk \otimes_{A_\pfk} N_\pfk = 0$ by (3.7) $\iff M_\pfk = 0$ or $N_\pfk = 0$ by Exercise 2.3 (Note that $A_\pfk$ is a local ring and $M_\pfk,N_\pfk$ are finitely generated $A_\pfk$-modules by (3.4).) $\iff \pfk \notin \Supp(M) \bigcap \Supp(N)$.
+
+(vii)
+\begin{alignat*}{2}
+\Supp(M/\afk M)
+&= \Supp((A/\afk) \otimes_A M) \quad &&\text{(by Exercise 2.2)} \\ 
+&= \Supp(A/\afk) \bigcap \Supp(M)  \quad &&\text{(by (vi))}  \\
+&= V(\afk) \bigcap V(\Ann(M))  \quad &&\text{(by (ii) and (v))} \\
+&= V(\afk + \Ann(M))  \quad &&\text{(by Exercise 1.15)}.
+\end{alignat*}
+
+(viii) Suppose $\qfk \notin {f^*}^{-1}(\Supp(M)) \iff \pfk:=f^*(\qfk)=f^{-1}(\qfk) \notin \Supp(M) \iff M_\pfk=0$. Note that
+\begin{alignat*}{2}
+(B \otimes_A M)_\qfk
+&\simeq B_\qfk \otimes_B (B \otimes_A M)    &&\quad \text{(by (3.5))}  \\
+&\simeq B_\qfk \otimes_A M    \\
+&\simeq (B_\qfk \otimes_{A_\pfk} A_\pfk) \otimes_A M  &&\quad \text{(note $B_\qfk$ is an $A_\pfk$-module via $f$)}  \\
+&\simeq B_\qfk \otimes_{A_\pfk} (A_\pfk \otimes_A M)   \\
+&\simeq B_\qfk \otimes_{A_\pfk} M_\pfk  &&\quad \text{(by (3.5))}.
+\end{alignat*}
+So we have $(B \otimes_A M)_\qfk=0$, or equivalently, $\qfk \notin \Supp(B \otimes_A M)$.
+
+Conversely, suppose $\qfk \notin \Supp(B \otimes_A M) \iff (B \otimes_A M)_\qfk=0$. Let $\mfk$ (resp. $\nfk$) be the unique maximal ideal of $A':=A_\pfk$ (resp. $B':=B_\qfk$). Then since $0 = (B \otimes_A M)_\qfk \simeq B' \otimes_{A'} M_\pfk$, we have
+\begin{align*}
+0
+&\simeq B'/\nfk \otimes_{B'} (B' \otimes_{A'} M_\pfk)  
+\simeq B'/\nfk \otimes_{A'} M_\pfk   \\
+&\simeq (B'/\nfk \otimes_{A'/\mfk} A'/\mfk) \otimes_{A'} M_\pfk  \quad \text{(note $B'/\nfk$ is an $A'/\mfk$-vector space via $f$)}  \\
+&\simeq B'/\nfk \otimes_{A'/\mfk} (A'/\mfk \otimes_{A'} M_\pfk)     \\
+&
+= B'/\nfk \otimes_{A'/\mfk} (M_\pfk/\mfk M_\pfk).
+\end{align*}
+Since $M$ is a finitely generated $A$-module, so $M_\pfk$ is a finitely generated $A'$-module. This implies that $M_\pfk/\mfk M_\pfk$ is a finite dimensional $A'/\mfk$-vector space, say of dimension $n$. Then we have
+$$
+0 = B'/\nfk \otimes_{A'/\mfk} (M_\pfk/\mfk M_\pfk)
+\simeq B'/\nfk \otimes_{A'/\mfk} ( \oplus_{i=1}^n A'/\mfk)
+\simeq \oplus_{i=1}^n B'/\nfk,
+$$
+which implies that $n=0$, or equivalently, $M_\pfk = \mfk M_\pfk$. So by Nakayama's lemma (2.6), $M_\pfk = 0 \iff \qfk \notin {f^*}^{-1}(\Supp(M))$.
 
 \subsection*{Exercise 3.20}
 
@@ -209,7 +293,7 @@ $$
 \begin{tikzcd}
 	& M' \otimes_A K \arrow[r, "\alpha"] \arrow[d, "a"] & M \otimes_A K \arrow[r, "\beta"] \arrow[d, "b"] & M'' \otimes_A K \arrow{r} \arrow[d, "c"] & 0 \\ 
 0 \arrow{r} & M' \otimes_A L \arrow[r, "\gamma"] \arrow[d, "d"] & M \otimes_A L \arrow[r, "\delta"] \arrow[d, "e"] & M'' \otimes_A L \arrow[r] & 0 \\
-	& M' \otimes_A N \arrow[r, "\epsilon"] & M \otimes_A N & &
+	& M' \otimes_A N \arrow[r, "\epsilon"] & M \otimes_A N. & &
 \end{tikzcd}
 $$
 Note that $c$ is injective by (2.19) (as $M''$ is flat).

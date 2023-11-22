@@ -24,7 +24,7 @@ Let $\ovl{A}:=A/\ker f$ and $\ovl{B}:=B/\qfk$. Note that the embedding $\ovl{f}:
 
 Now, define
 $$
-g: B \sur \ovl{B} \inj \Frac(\ovl{B}) \overset{\tilde{\ovl{f}}}{\inj} \Omega
+g: B \sur \ovl{B} \inj \Frac(\ovl{B}) \overset{\tilde{\ovl{f}}}{\inj} \Omega.
 $$
 Then for any $a\in A$, $g(a) = \tilde{\ovl{f}}(\ovl{a}) = \ovl{f}(\ovl{a}) = f(a)$. So $g$ is an extension of $f$.
 
@@ -35,7 +35,7 @@ By (5.3) it's enough to check any pure tensor $x \otimes y \in B' \otimes_A C$ i
 &(x \otimes y)^n + (f(b_1) \otimes y)(x \otimes y)^{n-1} + \cdots + (f(b_n) \otimes y^n)    \\
 ={} &(x^n \otimes y^n) + (f(b_1)x^{n-1} \otimes y^n) + \cdots + (f(b_n) \otimes y^n)  \\
 ={} &(x^n + f(b_1)x^{n-1} + \cdots + f(b_n)) \otimes y^n   \\
-={} &0 \otimes y^n = 0
+={} &0 \otimes y^n = 0.
 \end{align*}
 So $x \otimes y$ is integral over $(f \otimes 1)(B \otimes_A C)$.
 
@@ -49,7 +49,7 @@ $$
 $$
 for some $f_i(x),g_i(x) \in k[x]$ with $g_i(x^2-1) \notin \nfk$ (i.e., $g_i(1^2-1) = g_i(0) \neq 0$). So
 $$
-1 + \frac{f_1(x^2-1)}{g_1(x^2-1)} (x+1) + \cdots + \frac{f_n(x^2-1)}{g_n(x^2-1)} (x+1)^n = 0
+1 + \frac{f_1(x^2-1)}{g_1(x^2-1)} (x+1) + \cdots + \frac{f_n(x^2-1)}{g_n(x^2-1)} (x+1)^n = 0.
 $$
 Plug in $x=-1$ gives us $1=0$, which is absurd. Hence $B_\nfk$ is not integral over $A_\mfk$.
 
@@ -85,7 +85,7 @@ We next show that $(S^G)^{-1}A^G \simeq (S^{-1}A)^G$. Consider the natural ring 
 $$
 \begin{tikzcd}
   A^G \arrow[r, "f"] \arrow[dr, "g"'] & (S^G)^{-1}A^G \arrow[d, dashrightarrow, "h"]   \\
-										& (S^{-1}A)^G
+										& (S^{-1}A)^G.
 \end{tikzcd}
 $$
 We show that $g$ satisfies the three conditions in (3.2). (Then we will obtain the desired isomorphism $h: (S^G)^{-1}A^G  \isoto (S^{-1}A)^G$.)
@@ -98,7 +98,7 @@ For (iii), given any $a/s \in (S^{-1}A)^G$. As $\prod_{\sigma \neq \id_A} \sigma
 $$
 \frac{a}{s}
 = \frac{a \prod_{\sigma \neq \id_A} \sigma(s)}{\prod_{\sigma \in G} \sigma(s)}
-=: \frac{a'}{s'} \in (S^{-1}A)^G
+=: \frac{a'}{s'} \in (S^{-1}A)^G.
 $$
 Note that $s' \in S \cap A^G = S^G$.
 
@@ -230,7 +230,7 @@ $$
 \begin{array}{ccc}
 \{ \text{valuation ring of } K\} & \to & \{v:K \sur v(K^\times) \cup \{\infty\}, \text{valuation of } K \text{ where } v(K^\times) \sbe \Gamma \}   \\
 A & \mapsto & v_A|_{K^\times}: K^\times \to K^\times/A^\times \text{ and } v_A(0) = \infty     \\
-\{x \in K \mid v(x) \geq 0\} & \mapsfrom & v
+\{x \in K \mid v(x) \geq 0\} & \mapsfrom & v.
 \end{array}
 $$
 We claim that this is in fact a bijection.
@@ -244,7 +244,7 @@ Let $U:=\ker v|_{K^\times}$. Note that
 U &= \{ x \in K^\times \mid v(x)=0 \}    \\
 &= \{ x \in K^\times \mid v(x) \geq 0 \text{ and } v(x) = -v(x^{-1}) \leq 0 \}     \\
 &= \{ x \in K^\times \mid v(x) \geq 0 \text{ and } v(x^{-1}) \geq 0 \} 
-= A_v^\times  
+= A_v^\times.  
 \end{align*}
 By condition (1) we know $v|_{K^\times}$ is a group homomorphism. So we have the isomorphism $\phi: K^\times/U = K^\times/A_v^\times \isoto v(K^\times)$. And $v|_{K^\times} = \phi \circ v_{A_v}|_{K^\times}$.
 
