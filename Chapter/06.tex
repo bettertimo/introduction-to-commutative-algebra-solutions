@@ -6,13 +6,9 @@
 
 \subsection*{Exercise 6.1}
 
-(i) Consider the ascending chain $\ker u \sbe \ker u^2 \sbe \cdots$ in $M$. As $M$ is Noetherian, we have $\ker u \sbe \cdots \sbe \ker u^n = \ker u^{n+1} = \cdots$ for some $n$. We claim that $\ker u^n = 0$. (Then $\ker u = 0$ and we are done.)
+(i) Consider the ascending chain $\ker u \sbe \ker u^2 \sbe \cdots$ in $M$. As $M$ is Noetherian, we have $\ker u \sbe \cdots \sbe \ker u^n = \ker u^{n+1} = \cdots$ for some $n$. Let $x\in\ker u$. As $u$ is surjective, so is $u^n$. Take $y\in M$ s.t. $u^n(y)=x \implies u^{n+1}(y) = u(x) = 0 \implies y \in\ker u^{n+1} = \ker u^n \implies 0 = u^n(y) = x$. This shows that $u$ is injective.
 
-Let $x\in\ker u^n$. Choose $y_1$ s.t. $u(y_1) = x$. And choose $y_i$ inductively s.t. $u(y_{i+1}) = y_i$. In particular, $u(y_n) = y_{n-1} \implies u^n(y_n) = u^{n-1}(y_{n-1}) = \cdots = u(y_1) = x \implies u^{2n}(y_n) = u^n(x) = 0 \implies y_n \in \ker u^{2n} = \ker u^n \implies u^n(y_n) = x = 0$. This shows that $\ker u^n = 0$.
-
-(ii) Consider the descending chain $\im u \spe \im u^2 \spe \cdots$ in $M$. As $M$ is Artinian, we have $\im u \spe \cdots \spe \im u^n = \im u^{n+1} = \cdots$ for some $n$. We claim that $\im u^n = M$. (Then $\im u = M$ and we are done.)
-
-Let $x\in M$. Then $u^n(x) \in \im u^n = \im u^{2n} \implies u^n(x) = u^{2n}(y) = u^n(u^n(y))$ for some $y\in M$. As $u$ is injective, we have $x = u^n(y) \in \im u^n$.  This shows that $\im u^n = M$.
+(ii) Consider the descending chain $\im u \spe \im u^2 \spe \cdots$ in $M$. As $M$ is Artinian, we have $\im u \spe \cdots \spe \im u^n = \im u^{n+1} = \cdots$ for some $n$. Let $x\in M$. Note $u^n(x) \in \im u^n = \im u^{n+1}$. Take $y\in M$ s.t. $u^{n+1}(y) = u^n(x)$. As $u$ is injective, so is $u^n$. So we have $x = u(y) \in\im u$. This shows that $u$ is surjective.
 
 \subsection*{Exercise 6.2}
 
@@ -28,9 +24,9 @@ Note that by (6.3) $N_1/(N_1\cap N_2) \simeq (N_1+N_2)/N_2$ is Noetherian (Artin
 
 \subsection*{Exercise 6.4}
 
-By (6.2) we know $M$ is a finitely generated $A$-module. Let $x_1,\ldots,x_n$ be a set of generators. Consider the $A$-module homomorphism $\phi: A \to M^n$ given by $\phi(a) := (ax_1,\ldots,ax_n)$. It's easy to check that $\ker \phi = \afk$. So $A/\afk$ is isomorphic to a submodule of the $A$-module $M^n$. As $M^n$ is a Noetherian $A$-module by (6.4), so is $A/\afk$. And this implies that $A/\afk$ is Noetherian as an $(A/\afk)$-module.
+By (6.2) we know $M$ is a finitely generated $A$-module. Let $\{x_1,\ldots,x_n\}$ be a set of generators. Consider the $A$-module homomorphism $\phi: A \to M^n$ given by $\phi(a) := (ax_1,\ldots,ax_n)$. It's easy to check that $\ker \phi = \afk$. So $A/\afk$ is isomorphic to a submodule of the $A$-module $M^n$. As $M^n$ is a Noetherian $A$-module by (6.4), so is $A/\afk$. And this implies that $A/\afk$ is Noetherian as an $(A/\afk)$-module, i.e., $A/\afk$ is a Noetherian ring.
 
-The property Noetherian can not be replaced by Artinian. Consider Example 3 in page 74. The abelian group $G$ is Artinian as a $\ZZ$-module with the annihilator $\afk=0$. But $\ZZ/\afk = \ZZ$ is not an Artinian ring by Example 2.
+The Noetherian property can not be replaced by Artinian. Consider Example 3 in page 74. The abelian group $G$ is Artinian as a $\ZZ$-module with the annihilator $\afk=0$. But $\ZZ/\afk = \ZZ$ is not an Artinian ring by Example 2.
 
 \subsection*{Exercise 6.5}
 
@@ -65,6 +61,10 @@ Each $X_i \cap Y$ is closed in $Y$. And as $Y$ is irreducible, $Y = X_i \cap Y \
 \subsection*{Exercise 6.9}
 
 \subsection*{Exercise 6.10}
+
+By (6.2) we know $M$ is a finitely generated $A$-module. So by Exercise 3.19(v), $\Supp(M) = V(\Ann(M))$ is a closed subspace of $\Spec(A)$.
+
+Let $\phi: A \to A/\Ann(M)$ be the natural surjective map. Then by Exercise 1.21(iv), we know $\Spec(A/\Ann(M)) \simeq V(\Ann(M)) \sbe \Spec(A)$ is a homeomorphism. On the other hand, by Exercise 6.4, we have $A/\Ann(M)$ is a Noetherian ring. So by Exercise 6.8, $\Spec(A/\Ann(M))$ is a Noetherian topological space. This shows that $V(\Ann(M)) = \Supp(M)$ is also Noetherian.
 
 \subsection*{Exercise 6.11}
 

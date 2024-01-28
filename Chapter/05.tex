@@ -8,13 +8,21 @@
 
 Let $V(\bfk)$ be a closed set in $\Spec(B)$ where $\bfk$ is an ideal in $B$. We will show that $f^*(V(\bfk)) = V(f^{-1}(\bfk))$. (So $f^*$ is a closed map.)
 
-Given $f^*(\qfk) = f^{-1}(\qfk) \in f^*(V(\bfk))$ where $\qfk \spe \bfk$ is a prime. Then clearly $f^{-1}(\qfk)$ is a prime in $A$ and $f^{-1}(\qfk) \spe f^{-1}(\bfk)$. So $f^{-1}(\qfk) \in V(f^{-1}(\bfk))$.
+Given $f^*(\qfk) = f^{-1}(\qfk) \in f^*(V(\bfk))$ where $\qfk \spe \bfk$ is a prime in $B$. Then $f^{-1}(\qfk)$ is a prime in $A$ and $f^{-1}(\qfk) \spe f^{-1}(\bfk)$. So $f^{-1}(\qfk) \in V(f^{-1}(\bfk))$.
 
-Conversely, let $\pfk \in V(f^{-1}(\bfk))$ be a prime in $A$ with $\pfk \spe f^{-1}(\bfk)$ . We first claim that $f(\pfk)$ is a prime in $f(A)$. Given $f(a_1),f(a_2) \in f(A)$ with $f(a_1)\cdot f(a_2) = f(a_1a_2) \in f(\pfk)$. Choose $c \in \pfk$ s.t. $f(a_1a_2) = f(c) \implies a_1a_2-c \in \ker f \sbe f^{-1}(\bfk) \sbe \pfk \implies a_1a_2 \in \pfk \implies a_1 \in \pfk$ or $a_2 \in \pfk \implies f(a_1) \in f(\pfk)$ or $f(a_2) \in f(\pfk)$. This completes the claim.
+Conversely, let $\pfk \in V(f^{-1}(\bfk))$ be a prime in $A$ with $\pfk \spe f^{-1}(\bfk)$ . Since $\pfk$ contains the kernel of $f$, by \nameref{Bonus 1.1} we have $f(\pfk)$ is a prime in $f(A)$. As $B$ is integral over $f(A)$, by (5.10) there exists a prime $\qfk$ in $B$ s.t. $\qfk \cap f(A) = f(\pfk)$. So
+$$
+\pfk
+= f^{-1}(f(\pfk))
+= f^{-1}(\qfk \cap f(A))
+= f^{-1}(\qfk) \cap f^{-1}(f(A))
+= f^{-1}(\qfk) \cap A
+= f^{-1}(\qfk)
+= f^*(\qfk).
+$$
+(The first equality is due to \nameref{Bonus 1.1} again.)
 
-Since $f(\pfk)$ is a prime in $f(A)$ and $B$ is integral over $f(A)$, so by (5.10) there exists a prime $\qfk \sbe B$ s.t. $\qfk \cap f(A) = f(\pfk)$. We claim that $\pfk = f^{-1}(\qfk)$. Let $a\in\pfk \implies f(a) \in f(\pfk) = \qfk \cap f(A) \implies a \in f^{-1}(\qfk)$. Conversely, let $a\in f^{-1}(\qfk) \implies f(a) \in \qfk \cap f(A) = f(\pfk)$. Choose $c\in\pfk$ s.t. $f(a)=f(c) \implies a-c \in \ker f \sbe f^{-1}(\bfk) \sbe \pfk \implies a \in \pfk$. This completes the claim.
-
-In order to obtain $\pfk = f^{-1}(\qfk) = f^*(\qfk) \in f^*(V(\bfk))$, it remains to check that $\qfk \spe \bfk$. But this is easy because $\qfk = f(f^{-1}(\qfk)) = f(\pfk) \spe f(f^{-1}(\bfk)) = \bfk$.
+In order to obtain $f^*(\qfk) \in f^*(V(\bfk))$, it remains to check that $\qfk \spe \bfk$. But this is easy because $\qfk = f(f^{-1}(\qfk)) = f(\pfk) \spe f(f^{-1}(\bfk)) = \bfk$.
 
 \subsection*{Exercise 5.2}
 
@@ -55,7 +63,9 @@ Plug in $x=-1$ gives us $1=0$, which is absurd. Hence $B_\nfk$ is not integral o
 
 \subsection*{Exercise 5.5}
 
-(i) Let $x\in A$ be a unit in $B$. So $x^{-1} \in B$. As $B$ is integral over $A$, we have $x^{-n}+a_1x^{-(n-1)}+\cdots+a_n=0$ for some $a_i\in A$. Multiply this equation by $x^{n-1}$ we have $x^{-1} = -(a_1+a_2x+\cdots+a_nx^{n-1}) \in A$. So $x$ is a unit in $A$.
+(i) Suppose $x\in A$ is a unit in $B$ but not a unit in $A$. Then $x\in\mfk$ for some maximal ideal $\mfk$ of $A$. As $B$ is integral over $A$, by (5.10) there exists a prime ideal $\nfk$ of $B$ s.t. $\nfk \cap A = \mfk$. So we have $x\in \mfk \sbe \nfk \sbe B$. But this is a contradiction because $x$ is a unit in $B$.
+
+(Alternatively, suppose $x^{-1} \in B$. As $B$ is integral over $A$, we have $x^{-n}+a_1x^{-(n-1)}+\cdots+a_n=0$ for some $a_i\in A$. Multiplying this equation by $x^{n-1}$, we have $x^{-1} = -(a_1+a_2x+\cdots+a_nx^{n-1}) \in A$. So $x$ is a unit in $A$.)
 
 (ii) Since the Jacobson radical $\Jcal(A)$ (resp. $\Jcal(B)$) is the intersection of all maximal ideals in $A$ (resp. $B$), and by (5.8) we know the contractions of maximal ideals of $B$ is maximal in $A$, so we immediately have $\Jcal(B) \cap A \spe \Jcal(A)$. Conversely, let $x \in \Jcal(B) \cap A$. For any $y \in A \sbe B$, we have $1-xy \in A$ is a unit in $B$ by (1.9). So by (i) $1-xy$ is a unit in $A$ and hence $x \in \Jcal(A)$.
 
@@ -71,7 +81,39 @@ Again, using the same reason, we see that $x^{n-2}+a_1x^{n-3}+\cdots+a_{n-2} \in
 
 \subsection*{Exercise 5.9}
 
-\subsection*{Exercise 5.10}
+\subsection*{Exercise 5.10 \color{red}(incomplete, missing (ii))}
+
+We use the bar notation $\ovl{\cdot}$ to denote the corresponding (prime) ideal in the quotient ring.
+
+(i) (a) $\Rightarrow$ (b) By induction we may assume that $f(\pfk_1) \sbe f(\pfk_2) \sbe f(A)$ are primes where $\pfk_1 \sbe \pfk_2$ are primes in $A$ (see \nameref{Bonus 1.1} if necessary) and $\qfk_1$ is a prime in $B$ with $\qfk_1 \cap f(A) = f(\pfk_1)$.
+
+Since $f^*$ is a closed mapping, we have $f^*(V(\qfk_1)) = V(\afk)$ is closed in $\Spec(A)$, where $\afk$ is an ideal in $A$. Note $f^*(\qfk_1) = f^{-1}(\qfk_1)\in V(\afk) \implies f^{-1}(\qfk_1) \spe \afk \implies f(\pfk_2) \spe f(\pfk_1) = \qfk_1 \cap f(A) \spe f(\afk) \implies \pfk_2 \spe \afk$ by \nameref{Bonus 1.1} $\implies \pfk_2 \in V(\afk) = f^*(V(\qfk_1)) \implies \pfk_2 = f^*(\qfk_2) = f^{-1}(\qfk_2)$ for some $\qfk_2 \in V(\qfk_1) \implies f(\pfk_2) = \qfk_2 \cap f(A)$. This shows the going-up property.
+
+(b) $\Rightarrow$ (a) This was done in Exercise 5.1.
+
+(b) $\Rightarrow$ (c) Let $\ovl{f}: A/\pfk \to B/\qfk$ be the natural map and $\ovl{f}^*:\Spec(B/\qfk)\to\Spec(A/\pfk)$. Given $\ovl{\pfk'} \in \Spec(A/\pfk)$ where $\pfk'$ is a prime in $A$. Then we have $\pfk \sbe \pfk' \sbe A$ and so $f(\pfk) \sbe f(\pfk') \sbe f(A)$. Note that they are still prime in $f(A)$ by \nameref{Bonus 1.1}. So by the going-up property, there exists a prime ideal $\qfk'$ of $B$ s.t. $\qfk \sbe \qfk' \sbe B$ and $\qfk' \cap f(A) = f(\pfk')$.
+
+Note that we have $\ovl{\qfk'} \in \Spec(B/\qfk)$ with
+\begin{align*}
+\ovl{f}^*(\ovl{\qfk'}) = \ovl{f}^{-1}(\ovl{\qfk'}) 
+&= \{ a+\pfk \in A/\pfk \mid \ovl{f}(a+\pfk) := f(a)+\qfk \in \ovl{\qfk'}\}   \\
+&= \{ a+\pfk \in A/\pfk \mid f(a) \in \qfk'\cap f(A) = f(\pfk') \}     \\
+&= \{ a+\pfk \in A/\pfk \mid a\in \pfk' \}   \\
+&= \ovl{\pfk'}.
+\end{align*}
+Hence, $\ovl{f}^*$ is surjective.
+
+(c) $\Rightarrow$ (b) By induction we may assume that $f(\pfk_1) \sbe f(\pfk_2) \sbe f(A)$ are primes where $\pfk_1 \sbe \pfk_2$ are primes in $A$ (again, see \nameref{Bonus 1.1} if necessary) and $\qfk_1$ is a prime in $B$ with $\qfk_1 \cap f(A) = f(\pfk_1)$.
+
+Consider the natural map $\ovl{f}: A/\pfk_1 \to B/\qfk_1$ and the surjection $\ovl{f}^*:\Spec(B/\qfk_1)\to\Spec(A/\pfk_1)$. As $\ovl{\pfk_2} \in \Spec(A/\pfk_1)$, take $\ovl{\qfk_2} \in \Spec(B/\qfk_1)$ s.t. $\ovl{f}^*(\ovl{\qfk_2}) = \ovl{\pfk_2}$. This implies
+\begin{align*}
+\ovl{f}^*(\ovl{\qfk_2}) = \ovl{f}^{-1}(\ovl{\qfk_2}) 
+&= \{ a+\pfk_1 \in A/\pfk_1 \mid \ovl{f}(a+\pfk_1) := f(a)+\qfk_1 \in \ovl{\qfk_2}\}   \\
+&= \{ a+\pfk_1 \in A/\pfk_1 \mid f(a) \in \qfk_2 \cap f(A) \}     \\
+&= \ovl{\pfk_2}   \\
+&= \{ a+\pfk_1 \in A/\pfk_1 \mid a \in \pfk_2\}.
+\end{align*}
+So we have $\qfk_1 \sbe \qfk_2 \sbe B$ and $\qfk_2 \cap f(A) = f(\pfk_2)$. This shows the going-up property.
 
 \subsection*{Exercise 5.11}
 
@@ -84,8 +126,8 @@ Define the action of $G$ on $S^{-1}A$ by $\sigma(a/s) := \sigma(a)/\sigma(s)$, w
 We next show that $(S^G)^{-1}A^G \simeq (S^{-1}A)^G$. Consider the natural ring homomorphisms $f:A^G \to (S^G)^{-1}A^G$, $g:A^G \to (S^{-1}A)^G$ and the following diagram:
 $$
 \begin{tikzcd}
-  A^G \arrow[r, "f"] \arrow[dr, "g"'] & (S^G)^{-1}A^G \arrow[d, dashrightarrow, "h"]   \\
-										& (S^{-1}A)^G.
+  A^G \arrow[r, "f"] \arrow[d, "g"'] & (S^G)^{-1}A^G \arrow[dl, dashrightarrow, "h"]   \\
+ (S^{-1}A)^G.
 \end{tikzcd}
 $$
 We show that $g$ satisfies the three conditions in (3.2). (Then we will obtain the desired isomorphism $h: (S^G)^{-1}A^G  \isoto (S^{-1}A)^G$.)
@@ -181,7 +223,7 @@ Clearly $A$ is a subring of $K$ and $\mfk$ is a proper ideal in $A$. Let $x\in A
 
 (2) $\Rightarrow$ (1) Let $0 \neq a/b \in K$ where $a,b\in A$. Consider two ideals $(a),(b) \sbe A$. By assumption we have $(a) \sbe (b)$ or $(b) \sbe (a)$. And this implies $a/b \in A$ or $b/a \in A$. So $A$ is a valuation ring of $K$. 
 
-Now, suppose $A$ is a valuation ring and $\pfk$ is a prime ideal of $A$. Then by (3.11) (i) and (1.1) we see that $A_\pfk$ and $A/\pfk$ are valuation rings of their fields of fractions.
+Now, suppose $A$ is a valuation ring and $\pfk$ is a prime ideal of $A$. Then by (3.11)(i) and (1.1) we see that $A_\pfk$ and $A/\pfk$ are valuation rings of their fields of fractions.
 
 \subsection*{Exercise 5.29}
 
@@ -228,9 +270,9 @@ Let $0 \neq x \in K$. Note $0 = v(1) = v(x\cdot x^{-1}) = v(x) + v(x^{-1}) \impl
 From the constructions of Exercise 5.30 and 5.31, we have the following maps:
 $$
 \begin{array}{ccc}
-\{ \text{valuation ring of } K\} & \to & \{v:K \sur v(K^\times) \cup \{\infty\}, \text{valuation of } K \text{ where } v(K^\times) \sbe \Gamma \}   \\
-A & \mapsto & v_A|_{K^\times}: K^\times \to K^\times/A^\times \text{ and } v_A(0) = \infty     \\
-\{x \in K \mid v(x) \geq 0\} & \mapsfrom & v.
+\{ \text{valuation ring of } K\} & \longleftrightarrow & \{v:K \sur v(K^\times) \cup \{\infty\}, \text{valuation of } K \text{ where } v(K^\times) \sbe \Gamma \}   \\
+A & \longmapsto & v_A|_{K^\times}: K^\times \to K^\times/A^\times \text{ and } v_A(0) = \infty     \\
+\{x \in K \mid v(x) \geq 0\} & \longmapsfrom & v.
 \end{array}
 $$
 We claim that this is in fact a bijection.

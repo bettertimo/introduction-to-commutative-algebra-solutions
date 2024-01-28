@@ -187,6 +187,8 @@ Suppose now there is a generating set $\{y_1,\ldots,y_m\}$ of $F$ but $m<n$. The
 
 \subsection*{Exercise 3.16}
 
+(See \nameref{Bonus 3.3} for the sixth equivalent condition.)
+
 (i) $\Rightarrow$ (ii) Let $\pfk \in \Spec(A)$. As $\pfk^{ec} = \pfk$, by (3.16), we have $\pfk = \qfk^c$ for some $\qfk\in\Spec(B)$. So $f^*(\qfk) := \qfk^c = \pfk$.
 
 (ii) $\Rightarrow$ (iii) Suppose there exists a maximal ideal $\mfk$ of $A$ s.t. $\mfk^e=(1)$. Take $\nfk \in \Spec(B)$ s.t. $f^*(\nfk) := \nfk^c = \mfk \implies \nfk^{ce} = \mfk^e = (1) \sbe \nfk$ by (1.17), a contradiction.
@@ -212,6 +214,8 @@ $$
 0 \lra M'_B \overset{1 \otimes \iota}{\lra} M_B \overset{1 \otimes g}{\lra} (M_B)_B
 $$
 is still exact. By Exercise 2.13 we know $1\otimes g$ is injective. This implies $0 = \ker(1\otimes g) = \im(1\otimes \iota) \simeq M'_B$. Hence $M'=0$ by the assumption.
+
+(Alternatively, simply observe that for each pure tensor $b \otimes m' \in M'_B$, we have $b \otimes m' = b(1\otimes m') = b\cdot 0 = 0$. So $M'_B = 0$.)
 
 (v) $\Rightarrow$ (i) From (1.17) we know $\afk \sbe \afk^{ec}$. Conversely, let $a\in\afk^{ec}$. Take $M:=A/\afk$. Then by assumption we have the injection $A/\afk \inj (A/\afk)_B \simeq B/\afk^e$, which sends $\ovl{a}\in A/\afk$ to $\ovl{f(a)} \in B/\afk^e$. As $a \in \afk^{ec}$, we know $\ovl{f(a)} = \ovl{0} \in B/\afk^e$. So $\ovl{a} = \ovl{0} \in A/\afk$. This shows that $a\in\afk$.
 
@@ -336,5 +340,34 @@ $$
 Note that $c$ is injective by (2.19) (as $M''$ is flat).
 
 Let $x \in \ker \epsilon$. As $d$ is surjective, take $y \in M' \otimes_A L$ s.t. $d(y)=x$. Then $e(\gamma(y)) = \epsilon(d(y)) = \epsilon(x) = 0$. So $\gamma(y) \in \ker e = \im b$. Take $z \in M \otimes_A K$ s.t. $b(z)=\gamma(y)$. Then $c(\beta(z)) = \delta(b(z)) = \delta(\gamma(y)) = 0$. As $c$ is injective, $\beta(z)=0$. So $z\in \ker \beta = \im \alpha$. Take $w\in M' \otimes_A K$ s.t. $\alpha(w) = z$. Then $\gamma(y) = b(z) = b(\alpha(w)) = \gamma(a(w))$. As $\gamma$ is injective, $y=a(w)$. So $x = d(y) = d(a(w)) = 0$. This shows that $\epsilon$ is injective, as desired.
+
+\subsection*{Bonus 3.3} \label{Bonus 3.3}
+
+We show that the five definitions of faithful flatness given in Exercise 3.16 are all equivalent to: (vi) Given a sequence $M' \to M \to M''$ of $A$-modules. If the induced sequence $B \otimes_A M' \to B \otimes_A M \to B \otimes_A M''$ is exact, then so is the original sequence.
+
+(vi) $\Rightarrow$ (iv) Suppose $M$ is an $A$-module with $M_B = 0$. Consider the sequence $0 \to M \to 0$. Since $B \otimes_A 0 \to B \otimes_A M \to B \otimes_A 0$ is exact, so is $0 \to M \to 0$. In other words, $M=0$.
+
+(iv) $\Rightarrow$ (vi) Suppose for any $A$-module $M$, the canonical map $M \to M_B$ is injective. Let $M' \to M \to M''$ be a sequence of $A$-modules. Since (iv) implies (v), so we have the following commutative diagram:
+$$
+\begin{tikzcd}
+M' \arrow[r, "f"] \arrow[d, hook, "\alpha"] & M \arrow[r, "g"] & M'' \arrow[d, hook, "\beta"] \\ 
+B \otimes_A M' \arrow[r, "1\otimes f"] & B \otimes_A M \arrow[r, "1\otimes g"] & B \otimes_A M''.
+\end{tikzcd}
+$$
+Assume the exactness of the bottom sequence. For any $m' \in M'$, note $(\beta \circ g \circ f)(m') = ((1\otimes g) \circ (1\otimes f) \circ \alpha)(m') = 0$. As $\beta$ is injective, we have $g(f(m')) = 0$. So $\im f \sbe \ker g$. We then consider the exact sequence
+$$
+0 \lra \im f \lra \ker g \lra \ker g/\im f \lra 0.
+$$
+As $B$ is flat over $A$, we have the exact sequence
+$$
+0 \lra B \otimes_A \im f \lra B \otimes_A \ker g \lra B \otimes_A \ker g/\im f \lra 0.
+$$
+This implies that $(\ker g)_B/(\im f)_B \simeq (\ker g/\im f)_B$.
+
+Now, note that
+$$
+B \otimes_A \ker g \sbe \ker(1\otimes g) = \im(1\otimes f) = B \otimes_A \im f \sbe B \otimes_A \ker g.
+$$
+So we have $(\ker g)_B/(\im f)_B = 0 = (\ker g/\im f)_B$. And by the assumption of (iv) this implies $\ker g/\im f = 0$. The proof is now completed.
 
 \end{document}

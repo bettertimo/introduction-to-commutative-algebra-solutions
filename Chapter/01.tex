@@ -199,8 +199,6 @@ For $\pfk\in X:=\Spec(A)$, we see from the definition of $X_f$ that $\pfk\in X_f
 
 Let $\Bcal:=\{ X_f \mid f\in A\}$. We check that $\Bcal$ forms a basis for the Zariski topology. Let $U\sbe X$ be an open set and $\pfk\in U$. Then $U=X \setminus V(\afk)$ for some ideal $\afk$ in $A$ by Exercise 1.15 (i). Since $\pfk\in U \implies \pfk\notin V(\afk) \implies \afk\nsubseteq\pfk$. So there exists $f\in\afk$ but $f\notin\pfk$. The former implies $(f)\sbe\afk \implies V(f)\spe V(\afk) \implies X_f \sbe U$. And the latter implies $\pfk\in X_f$. Hence we have $\pfk \in X_f \sbe U$.
 
-(i) This is equivalent to show that both $f,g \notin \pfk \iff fg \notin \pfk$, which is clear.
-
 (ii) $X_f=\emptyset \iff V(f)=X \iff f\in\pfk$ for all $\pfk \iff f\in \Ncal(A)$, the nilradical of $A \iff f$ is nilpotent.
 
 (iii) $X_f=X \iff V(f)=\emptyset \iff f\notin\pfk$ for all $\pfk \iff f$ is a unit. (See (1.5) if necessarily.)
@@ -342,6 +340,17 @@ Thus, $\pfk\in V(\afk)$.
 \subsection*{Exercise 1.27}
 
 \subsection*{Exercise 1.28}
-\phantom{}
+
+\subsection*{Bonus 1.1}  \label{Bonus 1.1}
+
+We mention the following fact (which is the generalization of (1.1)) without proof: Let $f: A\to B$ be a surjective ring homomorphism with kernel $K$. Then there is a bijection
+$$
+\begin{array}{ccc}
+\{ \text{ideals of } A  \text{ containing } K \} & \overset{\sim}{\longleftrightarrow} & \{ \text{ideals of } B\}   \\
+\afk & \longmapsto & f(\afk)   \\
+f^{-1}(\bfk) & \longmapsfrom & \bfk.
+\end{array}
+$$
+Moreover, under this bijection, primes ideals correspond to prime ideals and maximal ideals correspond to maximal ideals.
 
 \end{document}
